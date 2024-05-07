@@ -1,2 +1,3 @@
-# Sketched-Entertainment
-I can be entertaining, I swear
+# SGA source code
+
+This is where the source code for my game is.
