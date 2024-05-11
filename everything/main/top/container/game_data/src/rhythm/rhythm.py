@@ -306,6 +306,8 @@ try:
         - Boggle by Mega Mango
         - Loser, Baby (as per request) from Hazbin Hotel
         - Everybody Wants to Rule the World (tears for fears)
+
+        MAP
         - Borderline by Tame Impala
         - Coconut mall, mario kart (7?)
         '''
