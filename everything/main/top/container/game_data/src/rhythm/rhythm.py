@@ -306,6 +306,8 @@ try:
         - Boggle by Mega Mango
         - Loser, Baby (as per request) from Hazbin Hotel
         - Everybody Wants to Rule the World (tears for fears)
+        - Borderline by Tame Impala
+        - Coconut mall, mario kart (7?)
         '''
         
         def __init__(self):
@@ -384,11 +386,11 @@ try:
             if ENV:
                 left_timing_path = os.path.join(wDir, "maps\\rush\\timings_1_0-5.json")
                 left_track_path = os.path.join(wDir, "maps\\rush\\tracks_1_0-5.json")
-                music_path = os.path.join(wDir, "songs_ogg\\rush.ogg")
+                music_path = os.path.join(wDir, "songs_wav\\rush.wav")
             elif not ENV:
                 left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\rush\\timings_1_0-5.json"
                 left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\rush\\tracks_1_0-5.json"
-                music_path = "main\\top\\game_data\\src\\rhythm\\songs_ogg\\rush.ogg"
+                music_path = "main\\top\\game_data\\src\\rhythm\\songs_wav\\rush.wav"
             # load left time track
             print('Loading left timing track...')
             f = open(left_timing_path, 'r')
@@ -462,13 +464,13 @@ try:
                 left_track_path = os.path.join(wDir, "maps\\stayed_gone\\tracks_3_0-2.json")
                 right_timing_path = os.path.join(wDir, "maps\\stayed_gone\\timings_1_3-5.json")
                 right_track_path = os.path.join(wDir, "maps\\stayed_gone\\tracks_1_3-5.json")
-                music_path = os.path.join(wDir, "songs_ogg\\stayed_gone.ogg")
+                music_path = os.path.join(wDir, "songs_wav\\stayed_gone.wav")
             elif not ENV:
                 left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\stayed_gone\\timings_3_0-2.json"
                 left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\stayed_gone\\tracks_3_0-2.json"
                 right_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\stayed_gone\\timings_1_3-5.json"
                 right_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\stayed_gone\\tracks_1_3-5.json"
-                music_path = "main\\top\\game_data\\src\\rhythm\\songs_ogg\\stayed_gone.ogg"
+                music_path = "main\\top\\game_data\\src\\rhythm\\songs_wav\\stayed_gone.wav"
             # load left time track
             print('Loading left timing track...')
             f = open(left_timing_path, 'r')
@@ -550,13 +552,17 @@ try:
             # https://stackoverflow.com/questions/21957131/python-not-finding-file-in-the-same-directory
             wDir = os.path.dirname(os.path.abspath(__file__))
             if ENV:
-                left_timing_path = os.path.join(wDir, "maps\\rule_the_world\\timings_1_0-5.json")
-                left_track_path = os.path.join(wDir, "maps\\rule_the_world\\tracks_1_0-5.json")
-                music_path = os.path.join(wDir, "songs_ogg\\rule_the_world.ogg")
+                # left_timing_path = os.path.join(wDir, "maps\\rule_the_world\\timings_1_0-5.json")
+                # left_track_path = os.path.join(wDir, "maps\\rule_the_world\\tracks_1_0-5.json")
+                left_timing_path = os.path.join(wDir, 'maps\\rule_the_world\\timings_2_0-5.json')
+                left_track_path = os.path.join(wDir, 'maps\\rule_the_world\\tracks_2_0-5.json')
+                music_path = os.path.join(wDir, "songs_wav\\rule_the_world.wav")
             elif not ENV:
-                left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\timings_1_0-5.json"
-                left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\tracks_1_0-5.json"
-                music_path = "main\\top\\game_data\\src\\rhythm\\songs_ogg\\rule_the_world.ogg"
+                #left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\timings_1_0-5.json"
+                #left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\tracks_1_0-5.json"
+                left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\timings_2_0-5.json"
+                left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\rule_the_world\\tracks_2_0-5.json"
+                music_path = "main\\top\\game_data\\src\\rhythm\\songs_wav\\rule_the_world.wav"
             # load left time track
             print('Loading left timing track...')
             f = open(left_timing_path, 'r')
@@ -602,7 +608,8 @@ try:
                         #self.player.music.set_volume(0.00)
                         self.player.music.play()
                         #start_delay = 63.5 - scale(2.65, 'y') # delay for timings_1_0-5
-                        start_delay = 63.6 - scale(2.65, 'y') # delay for timings_1_0-5
+                        # start_delay = 63.6 - scale(2.65, 'y') # delay for timings_1_0-5, with start thing
+                        start_delay = 29.385 - scale(2.65, 'y') # delay for timings_1_0-5, with no start thing
                         start_delay_ms = int(1000 * start_delay)
                         print('Starting playback.')
                         print(f'- start delaying by {start_delay}s, {start_delay_ms}ms')
@@ -624,11 +631,11 @@ try:
             if ENV:
                 left_timing_path = os.path.join(wDir, "maps\\boggle\\timings_1_0-5.json")
                 left_track_path = os.path.join(wDir, "maps\\boggle\\tracks_1_0-5.json")
-                music_path = os.path.join(wDir, "songs_ogg\\boggle.ogg")
+                music_path = os.path.join(wDir, "songs_wav\\boggle.wav")
             elif not ENV:
                 left_timing_path = "main\\top\\game_data\\src\\rhythm\\maps\\boggle\\timings_1_0-5.json"
                 left_track_path = "main\\top\\game_data\\src\\rhythm\\maps\\boggle\\tracks_1_0-5.json"
-                music_path = "main\\top\\game_data\\src\\rhythm\\songs_ogg\\boggle.ogg"
+                music_path = "main\\top\\game_data\\src\\rhythm\\songs_wav\\boggle.wav"
             # load left time track
             print('Loading left timing track...')
             f = open(left_timing_path, 'r')
