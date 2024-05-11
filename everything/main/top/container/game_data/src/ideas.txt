@@ -1,0 +1,6 @@
+OK SO IDEAS
+
+- D is willing to do asset design, so I intend to make a 2D platformer. Consult C concerning how to make it.
+  - Refer to C's Scratch projects?
+  - The general gist is going around to fix robots without realizing their intent, which is to commit mass murder.
+  - This is going to be SO much harder, likely harder then the Rhythm game (which is not finished yet).

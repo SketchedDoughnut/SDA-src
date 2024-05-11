@@ -1,0 +1,35 @@
+Dependencies stuff:
+    - MOST IMPORTANT ONE:
+        - https://www.freecodecamp.org/news/python-requirementstxt-explained/
+            - pip freeze > (filename).(filetype)
+        - https://pipenv.pypa.io/en/latest/pipfile.html
+            - pipenv install -r path/to/requirements.txt
+            - to start virtual environment, pipenv shell
+        - https://www.activestate.com/resources/quick-reads/how-to-update-all-python-packages/
+            - pip install -r requirements.txt --upgrade
+        - https://ioflood.com/blog/pip-update-package/#:~:text=Here's%20a%20quick%20recap%3A,old%20version%20if%20it%20exists.
+            pip install --upgrade (x)
+
+    - OTHERS:
+        - https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph#supported-package-ecosystems
+        - https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/exploring-the-dependencies-of-a-repository
+        - https://github.com/github/docs/blob/main/package.json
+
+
+
+
+
+
+
+
+
+
+Licensing stuff:
+    - https://github.com/SketchedDoughnut/development/community/license/new
+    - https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
+    - https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
+    - https://github.com/SketchedDoughnut/development/community/license/new?branch=master&filename=LICENSE&template=epl-2.0
+    - https://github.com/SketchedDoughnut/development/community/license/new?branch=master&filename=LICENSE&template=agpl-3.0
+    - https://github.com/SketchedDoughnut/development/community/license/new?branch=master&filename=LICENSE&template=mpl-2.0
+    - https://github.com/SketchedDoughnut/development/community/license/new?branch=master&filename=LICENSE&template=unlicense
+    - https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository

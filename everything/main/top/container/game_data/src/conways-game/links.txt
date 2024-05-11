@@ -1,0 +1,5 @@
+Google doc:
+    - https://docs.google.com/document/d/1VaTz39U7xvC1EcUVTWmyc2KfPmqeeQwqqLfgbF8p7Rs/edit
+
+Wiki page:
+    - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

@@ -1,0 +1,13 @@
+- MAKE SURE PROGRAMS ARE WORKING PROPERLY
+
+- make sure file directories are adapted for intent (codespace/VSCode, or normal pc)
+    - lookup:
+        - NOTE: NEWER DEVELOPED PROGRAMS USE A WORKING DIRECTORY SYSTEM AND DO NOT NEED THIS SYSTEM
+        - # - for codespace
+        - # for run
+
+- clear any specific files of their directories (ie. delete.json)
+- reset data.json in setup/
+- clean up pyinstaller.exe before release-based commit
+
+- make sure all .exe are compiled and organized right

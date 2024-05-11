@@ -1,0 +1,17 @@
+tododododo
+
+Test systems
+    - new updates:
+        - game_data: STATUS: WORKING
+        - top: STATUS: FAIL (directory is being used error)
+    - full-redo update setup: STATUS: WORKING
+    - full-redo execution: STATUS: WORKING
+    - backing up systems (edit file_list.json to test for nonexistents): STATUS: WORKING
+    - make sure nothing else broke: STATUS: WORKING
+
+Resets 
+    - line 98 of fiesta
+    - line 27 of rollback.py in everything/main/setup/update/tools
+    - line 46-47 of full-redo.py in everything/full-redo
+    - data.json
+    - file_list.json

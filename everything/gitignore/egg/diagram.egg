@@ -1,0 +1,9 @@
+This is a .egg file, I am a god.
+Anyways, a diagram of how this runs, from top down.
+
+- Start shortcut -> main/top/starter.exe
+- Runs index -> container/index.py
+- Runs imports -> imports.py
+- Runs update -> update.py
+    - for update:
+        - end my suffering

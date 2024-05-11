@@ -1,0 +1,13 @@
+OK SO THIS IS THE FILE FOR THE OVERBEARING NOTES
+
+FOR RELEASES:
+    Body:
+        - (release ID)(space)(tag)
+            - Ex: 1a2a6cb game_data
+        - Explanations:
+            - the "release ID" is the ID assigned to commits. This is used to see if a new 
+              release is out, based on a new commit.
+            - the "tag" is what files are to be re-installed.
+                - game_data: re-installs the "game_data" folder
+                - top: re-installs the "top" folder
+                - full: re-installs everything in the folder that "main" is in (the root folder?)

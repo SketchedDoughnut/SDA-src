@@ -1,0 +1,17 @@
+Some arbitrary handling for paths, succeeded by data in config.json
+----------------------------------------------------------------------
+# runs delete file
+# for codespace
+try:
+    os.system(f'python (relative path)') # run path  --> delete.py
+
+except:
+    try:
+        os.system(f'python (abs path from top)') # vscode path --> main/setup/delete.py
+
+    except Exception as e:
+        print(f'error: {e}')
+        print('vsc handling: exiting')
+        time.sleep(5)
+        exit()
+----------------------------------------------------------------------        

@@ -1,0 +1,36 @@
+https://stackoverflow.com/questions/9960583/how-do-you-make-an-installer-for-your-python-program
+
+https://installforge.net/
+
+https://github.com/BirdLogics/sb3topy
+
+https://pyinstaller.org/en/stable/
+
+https://github.com/abi/screenshot-to-code
+
+https://www.youtube.com/watch?v=wp2pNVUl3lc
+
+https://github.com/fbunaren/GitHubFolderDownloader
+
+https://stackoverflow.com/questions/63321852/efficient-way-to-process-multiple-files-in-parallel-with-different-arguments-and
+
+https://www.tutorialspoint.com/how-to-run-multiple-python-files-in-a-folder-one-after-another
+
+https://www.geeksforgeeks.org/read-json-file-using-python/?ref=ml_lbp
+
+https://answers.microsoft.com/en-us/windows/forum/all/windows-defender-thinks-my-exe-file-is-a-virus/6f2562f3-772d-4696-bc29-43dbac8185f2
+
+https://stackoverflow.com/questions/6904487/how-to-pass-arguments-to-a-thread
+
+PYGAME:
+    - https://github.com/techwithtim/PygameForBeginners
+    - https://github.com/search?q=pygame&type=repositories
+
+3D renderer system
+    - https://www.youtube.com/watch?v=1p6aPS_WavY
+
+NOISE:
+    https://stackoverflow.com/questions/53365282/cant-install-noise-module
+        - https://www.lfd.uci.edu/~gohlke/pythonlibs/ 
+        - NOTE: refer to render folder for which version is installed
+        - NOTE: use "pip install (full path to whl file)"

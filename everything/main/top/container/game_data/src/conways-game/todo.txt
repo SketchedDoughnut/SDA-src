@@ -1,0 +1,3 @@
+- add start menu 
+    - add reset buttons, button for pausing, slider for tick speed (change this at top of main)
+        - generationTickRate

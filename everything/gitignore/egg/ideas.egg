@@ -1,0 +1,41 @@
+----------------------------------------------------------------------------
+FULL-REDO REVAMP
+--------------------------------------
+AFFECTS: 
+    - full-redo.py, full-redo.exe, full-redo/_internal (maybe (update/*)?)
+
+So, I had an idea about a new design for full-redo. Currently, what it does is fiesta.exe installs the full-redo/ above the everything/ folder, then directs you to 
+run full-redo/full-redo.exe. This then deletes and re-installs everything/, at which point it tells you to relaunch. The shortcut works as normal. fiesta.exe does not
+try and clean it up.
+
+THE PROPOSED IDEA
+So, new plan, then. For one, add a boolean to data.json that tells it to try and clean the full-redo folder, just for organization. But anyways, the functionality parts of 
+full-redo.exe. My idea is to have it rewrite the shortcut (currently game_name.lnk (2/24/2024)) and re-route it to full-redo.exe. When full-redo.exe is done, it will re-route it
+back into fiesta.exe and all should be fine. We can use the code to find the desktop directory that is in fiesta.exe (I think?) to do this. I also had the idea to have it 
+use write-binary (wb) and read-binary (rb) modes to directly copy .exe code over from one to another, but I don't see much of a purpose of that, as full mode (the only time 
+this idea would be invoked) is meant to re-install everything. Consider it, though, for other ventures.
+
+IN SUMMARY:
+    - This is somewhat of a revamp to full-redo.exe, as well as fiesta.exe for cleanup. Other systems might be implemented, too.
+----------------------------------------------------------------------------
+
+
+UPDATE DETECTION
+--------------------------------------
+AFFECTS: 
+    - update.py 
+
+So, I realized an issue. Say I push out an update that affects full bounds. Then I push out an update that affects game_data. The update handler will detect the 
+newest update which only affects game_data, and will not update other files. This is an issue. One thing I can try to do, if I can find out how, is to go through all releases,
+adding each commit label to a list. Then, when it finds the commit label that matches the current one, it will break out of the loop. It will then check the most recent
+update mode. If it is game_data, it will note that. Then, it goes through the list and gets two things:
+    - The distance from the current commit label to the new commit label (length of list)
+    - If any previous update mode has a higher priority (game_data -> top -> full)
+Using this data, it will evaluate. It will likely only use the distance from previous update for display (emphasis, y'know), but it use the higher priority detection in order
+to determine what type of update to execute. If the current mode is game_data but two updates previous was full, then it will prefer full over game_data. If the current mode
+is top and the previous one was game_data, it would prefer top over game_data. It will also alert the user that the program is distance updates behind, 
+and that a larger update (give them the mode) is required. Then it will do the same cancel or continue buttons as current functionality (4/24/2024), yada yada. 
+
+IN SUMMARY:
+    - It is a decently major update, changing how update.py processes updates. It might not be possible but is worth considering.
+----------------------------------------------------------------------------
