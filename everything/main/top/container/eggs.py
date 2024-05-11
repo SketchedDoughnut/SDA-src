@@ -1,4 +1,4 @@
-all_releases = 'https://api.github.com/repos/SketchedDoughnut/development/releases?page=1&per_page=10000'
+all_releases = 'https://api.github.com/repos/SketchedDoughnut/SDA-src/releases?page=1&per_page=10000'
 
 import requests
 
