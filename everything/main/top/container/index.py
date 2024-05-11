@@ -115,7 +115,7 @@ try:
 
   path_list = []
   path_list.append([os.path.join(wDir, 'game_data/src/flappy/flappy.py'), 'Flappy bird'])
-  path_list.append([os.path.join(wDir, 'game_data/src/rhythm/rhythm.py'), 'Rhythm'])
+  # path_list.append([os.path.join(wDir, 'game_data/src/rhythm/rhythm.py'), 'Rhythm'])
   path_list.append([os.path.join(wDir, 'game_data/src/conways-game/main.py'), 'Conways Game Of Life'])
 
   # imports
