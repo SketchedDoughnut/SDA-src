@@ -65,7 +65,7 @@ tmp_path = f'{wDir}/tmp' # changed from wDir to high_wDir
 zip_path = f'{tmp_path}/latest-release.zip'
 
 # extract path for install
-extract_path = f"{tmp_path}/SketchedDoughnut-development-{commit_label}/everything"
+extract_path = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}/everything"
 
 # everything path
 everything_path = f'{high_wDir}/everything'

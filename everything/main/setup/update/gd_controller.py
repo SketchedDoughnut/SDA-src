@@ -50,7 +50,7 @@ def update_handler(
     repo_url = "https://api.github.com/repos/SketchedDoughnut/SDA-src/releases/latest"
     zip_download_path = f"{setup_wDir}/tmp/latest_release.zip"
     ext_download_path = f"{setup_wDir}/tmp"
-    copy_source = f"{ext_download_path}/SketchedDoughnut-development-{release_version}/everything/main/top/container/game_data"
+    copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{release_version}/everything/main/top/container/game_data"
     copy_location = f'{(main_wDir)}/top/container/game_data'
     json_path = os.path.join(setup_wDir, 'file_list.json')
     everything_path = os.path.dirname(main_wDir)    

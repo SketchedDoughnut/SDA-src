@@ -37,7 +37,7 @@ def update_handler(main_wDir, setup_wDir):
     everything_path = os.path.dirname(main_wDir)
     #repo_url = "https://api.github.com/repos/SketchedDoughnut/development/releases/latest"
     repo_url = "https://api.github.com/repos/SketchedDoughnut/SDA-src/releases/latest"
-    copy_source = f"{ext_download_path}/SketchedDoughnut-development-{release_version}/everything/main/top"
+    copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{release_version}/everything/main/top"
     state = False
 
 
