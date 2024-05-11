@@ -228,11 +228,6 @@ try:
             if paused == False:
                 current_board = new_board
         pygame.display.update()
-        # import os
-        # import webbrowser
-        # filename = 'file:///'+os.getcwd()+'/' + 'test.html'
-        # webbrowser.open_new_tab(filename) 
-        # break
     pygame.quit()
 
 except Exception as e:

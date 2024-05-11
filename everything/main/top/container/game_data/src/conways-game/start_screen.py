@@ -19,6 +19,7 @@ class StartScreen:
             'background highlight': (212, 215, 246),
             'accent 1': (176, 168, 219),
             'accent 2': (113, 103, 165),
+            'learn more': (165, 147, 200),
             #'exit': (243, 101, 101)
             'exit': (255, 46, 46),
             #'close': (16, 36, 114)
@@ -149,6 +150,35 @@ class StartScreen:
             button_height,
             self.exit_button
         )
+        
+        ## get learn more button, assemble button
+        button_color = self.colors['learn more']
+        button_width = self.bg_width / 4
+        button_height = self.scale(50, 'y')
+        button_x = self.bg_x - self.scale(577.5, 'x')
+        button_y = self.bg_y + self.scale(75, 'y')
+        self.assemble_button(
+            button_color,
+            button_x,
+            button_y,
+            button_width,
+            button_height,
+            self.learn_more
+        )
+
+        ## assemble learn more text
+        txt_color = self.colors['black']
+        txt_msg = 'learn more'
+        txt_size = self.scale(45, 'x')
+        txt_x = (self.bg_x / 2) - self.scale(60, 'x')
+        txt_y = self.bg_y  + self.scale(77, 'y')
+        self.assemble_text(
+            txt_color,
+            txt_size,
+            txt_msg,
+            txt_x,
+            txt_y
+        )
 
         ## assemble title text
         txt_color = self.colors['black']
@@ -273,7 +303,10 @@ class StartScreen:
             y = txt_y
         )
 
-    
+
+
+
+
     ## ASSEMBLY FUNCTIONS
     def assemble_background(self, color: tuple, x: int, y: int, width: int, height: int) -> None:
         bg_rect = pygame.Rect(x, y, width, height)
@@ -309,7 +342,9 @@ class StartScreen:
             function = button[2]
             pygame.draw.rect(self.window, color, rect)
             if rect.collidepoint(pygame.mouse.get_pos()) and pressed[0]:
-                return function()
+                state =  function()
+                if state != 'no return':
+                    return state
         
         for text in self.text_queue:
             self.window.blit(text[0], text[1])
@@ -318,11 +353,18 @@ class StartScreen:
 
 
 
+
+
+
+
     ## TOOL FUNCTIONS
     # function to scale numbers
     def scale(self, num: int, mode: str) -> int:
         if mode == 'x': return (num / 1920) * pygame.display.get_window_size()[0]
         elif mode == 'y': return (num / 1080) * pygame.display.get_window_size()[1]
+
+
+    ## BUTTONS
 
     # basic function to exit
     def exit_button(self) -> None:
@@ -334,3 +376,11 @@ class StartScreen:
     def close_menu(self) -> bool:
         print('menu closed')
         return False # to end start_menu
+    
+    def learn_more(self) -> None:
+        import os
+        import webbrowser
+        #filename = 'file:///'+ os.getcwd() + '/' + 'test.html'
+        filename = "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+        webbrowser.open_new_tab(filename) 
+        return 'no return'
