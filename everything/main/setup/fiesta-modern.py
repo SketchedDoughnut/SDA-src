@@ -681,7 +681,8 @@ try:
                     #repo_url = "https://api.github.com/repos/SketchedDoughnut/development/releases/latest"
                     repo_url = "https://api.github.com/repos/SketchedDoughnut/SDA-src/releases/latest"
                     # TRANSITION TO NEW REPO! LETS SEE HOW THIS GOES WOOOOOOOOOOOOOOOOOOOOOOO
-
+                    
+                    print('Update: Downloading .zip...')
                     zip_download_path = f"{self.install_path}/tmp/latest_release.zip"  # Change the path if needed
                     d.download_latest_release(repo_url, zip_download_path)
 
@@ -698,7 +699,8 @@ try:
 
                     copy_location = f'{(self.install_path)}/everything'
                     print(f'Update: Copying files to {copy_location}')
-                    copy_source = f"{ext_download_path}/SketchedDoughnut-development-{self.release_version}/everything/"
+                    #copy_source = f"{ext_download_path}/SketchedDoughnut-development-{self.release_version}/everything/"
+                    copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/everything/"
                     c.copy(copy_source, copy_location)
 
                     print('Update: Cleaning up tmp...')
@@ -846,6 +848,10 @@ try:
         # quits install file (to make sure it goes right)
         def quit_install(self):
             print('---------------')
+            if not self.desktop_shortcut:
+                print(f'Since you did not choose to have a shortcut, the file to run is located in: ')
+                print(f'- {self.install_path}/everything/main/setup/fiesta.exe')
+                print('---------------')
             input(f'Install complete! Time: {round(self.end - self.start, 2)}s \nEnter anything to exit: ')
             #print('Install complete. Exit in:')
             #for i in range(3, 0, -1):

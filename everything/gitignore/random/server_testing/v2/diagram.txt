@@ -1,0 +1,20 @@
+- https://www.youtube.com/watch?v=TiMeoQt3K4g
+    - https://youtu.be/IbzGL_tjmv4
+        - https://github.com/engineer-man/youtube/blob/master/141/client.py
+
+https://github.com/GianisTsol/python-p2p
+
+https://www.youtube.com/watch?v=CV7_stUWvBQ
+https://www.youtube.com/watch?v=WM1z8soch0Q
+https://www.youtube.com/results?search_query=sockets+conneting+to+online+servers+pyhton
+https://www.youtube.com/watch?v=KQasIwElg3w&list=PLzMcBGfZo4-kR7Rh-7JCVDN8lm3Utumvq&index=11
+https://www.youtube.com/watch?v=_fx7FQ3SP0U&list=PLzMcBGfZo4-kR7Rh-7JCVDN8lm3Utumvq
+
+https://www.techwithtim.net/tutorials/python-online-game-tutorial/server
+
+AWS
+https://aws.amazon.com/cloudfront/?did=ft_card&trk=ft_card
+https://aws.amazon.com/storagegateway/?did=ft_card&trk=ft_card
+https://aws.amazon.com/lambda/?did=ft_card&trk=ft_card
+https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc%252F%253Fp&c=wa&awsf.Free%20Tier%20Types=tier%23always-free&awsf.Free%20Tier%20Categories=*all&awsm.page-all-free-tier=5
+https://aws.amazon.com/free/webapps/?gclid=Cj0KCQjwir2xBhC_ARIsAMTXk86eI9gfn0LWzKgygShrn825Tcxg5QpBUfWB4oxDoxkNxj__frv5c3AaAncpEALw_wcB&trk=6f75e631-3b71-4d44-a71d-d557bcd37563&sc_channel=ps&ef_id=Cj0KCQjwir2xBhC_ARIsAMTXk86eI9gfn0LWzKgygShrn825Tcxg5QpBUfWB4oxDoxkNxj__frv5c3AaAncpEALw_wcB:G:s&s_kwcid=AL!4422!3!531871356398!p!!g!!free%20servers%20hosting!2038938166!74770369129

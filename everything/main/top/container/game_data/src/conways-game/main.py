@@ -199,6 +199,12 @@ try:
                 renderer.camera.z = renderer.camera.z * (0.9 ** event.y)
             
             elif event.type == pygame.KEYDOWN:
+                # ik its diff let me have this
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_LCTRL] and keys[pygame.K_c] or keys[pygame.K_LCTRL] and keys[pygame.K_w]:
+                    print('ctrl + c / ctrl + w')
+                    running = False
+
                 if event.key == pygame.K_SPACE:
                     if start_menu == True:
                         start_menu = False
