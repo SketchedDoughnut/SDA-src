@@ -323,16 +323,18 @@ try:
 
 
                     else:
-                        print('---------------')
-                        print('Installer redirecting to starter file...')
-
                         # FOR PYTHON
                         self.top_wDir = (os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
                         # FOR COMPILE
                         self.top_wDir = os.path.dirname(self.top_wDir)
 
+                        print('---------------')
+                        print('Installer running FOMX...')
+                        os.system(f'python {self.top_wDir}/setup/FOMX/fomx.py')
+                        print('---------------')
                         self.top_wDir = os.path.join(self.top_wDir, 'top')
+                        print('Installer redirecting to starter file...')
                         os.system(f'python {self.top_wDir}/starter.py')
                         sys.exit() 
 
