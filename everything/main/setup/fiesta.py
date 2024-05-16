@@ -679,7 +679,7 @@ try:
             # NOTE: Do this because you can link branch in that url and it will identify it
             # NOTE: .download still runs the same
             try:
-                downloader = Downloader("https://github.com/SketchedDoughnut/development")
+                downloader = Downloader("https://github.com/SketchedDoughnut/SDA-src")
                 #downloader = Downloader("https://github.com/a16z/ai")
                 #downloader = Downloader("https://github.com/microsoft/AI")
 
