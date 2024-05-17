@@ -4,9 +4,15 @@
 **v.1.0.0**
 
 Moved some files around, optimized code, and fixed some bugs. The rhythm game is still disabled until further notice. 
-- release label: [71c47ef](https://github.com/SketchedDoughnut/SDA-src/commit/71c47efb48474a1b1592015df1800b3d99122c8c)
+- commit label: [71c47ef](https://github.com/SketchedDoughnut/SDA-src/commit/71c47efb48474a1b1592015df1800b3d99122c8c)
 
-**v1.0.1, v1.0.2**
+**v1.0.1, v1.0.2, v1.0.3**
 
 Implementing the FOMX system, a small patch-agent that grabs data from its own repository.
-- release label: [55784fd](https://github.com/SketchedDoughnut/SDA-src/commit/55784fdc090d7677c69eb0d199cb0b241efba0e5)
+- commit label: [55784fd](https://github.com/SketchedDoughnut/SDA-src/commit/55784fdc090d7677c69eb0d199cb0b241efba0e5)
+
+# 5/16/24**
+**v1.0.4**
+
+Added copying for files not in the everything directory (such as LICENSE, this changelog, README, etc) to both full-redo.exe as well as fiesta-modern.exe (this has been updated on the SDA repository too).
+- commit label: [feb7522](https://github.com/SketchedDoughnut/SDA-src/commit/feb752286b83275c9ac4f12fffad8137e2714c05)
