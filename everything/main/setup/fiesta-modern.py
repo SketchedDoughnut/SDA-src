@@ -700,7 +700,7 @@ try:
                     self.release_version = release_version[0]
 
                     copy_location = f'{(self.install_path)}/everything'
-                    back_extract = f'{self.install_path}/'
+                    back_extract = f'{self.install_path}/IMPORTANT'
                     other_paths = [ 
                         # all MD
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md",
@@ -714,11 +714,12 @@ try:
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock"
                     ]
 
-                    print(f'Update: Copying files to {copy_location}')
+                    print(f'Update: Copying files to {copy_location}...')
                     copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/everything/"
                     c.copy(copy_source, copy_location)
 
                     # new experimental copying system for extra files
+                    print(f'Update: Copying IMPORTANT files to {back_extract}...')
                     for file in other_paths:
                         c.copy(file, back_extract, mode='file')
                     
