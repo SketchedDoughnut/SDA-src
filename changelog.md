@@ -11,7 +11,7 @@ Moved some files around, optimized code, and fixed some bugs. The rhythm game is
 Implementing the FOMX system, a small patch-agent that grabs data from its own repository.
 - commit label: [55784fd](https://github.com/SketchedDoughnut/SDA-src/commit/55784fdc090d7677c69eb0d199cb0b241efba0e5)
 
-# 5/16/24**
+# 5/16/24
 **v1.0.4**
 
 Added copying for files not in the everything directory (such as LICENSE, this changelog, README, etc) to both full-redo.exe as well as fiesta-modern.exe (this has been updated on the SDA repository too).
