@@ -705,10 +705,10 @@ try:
                         # all MD
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md",
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/README.md",
-                        # all extensionless (txt)
-                        ######### f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/.gitattributes.txt",
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/LICENSE.txt",
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.txt",
+                        # all extensionless
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/.gitattributes",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/LICENSE",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile",
                         # all other types (.lock, other .txt)
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/requirements.txt", 
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock"
