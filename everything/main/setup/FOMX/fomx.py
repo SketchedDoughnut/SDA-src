@@ -1,5 +1,6 @@
 '''
 PLEASE REFER TO ./GUIDE.TXT FOR MORE INFO
+~ swoosh ~
 '''
 
 # builtins
@@ -81,9 +82,10 @@ bounds_json = f'{copy_location}/bounds.json'
 
 
 
-print('Attempting to delete previous tmp...')
+print('FOMX: attempting to delete previous tmp...')
 try:
     shutil.rmtree(tmp_path)
+    print('FOMX: previous tmp deleted')
 except:
     pass
 os.mkdir(tmp_path)
@@ -125,22 +127,37 @@ print('---------------')
 print('FOMX: Copying over code...')
 time.sleep(0.5)
 for file in n_list:
+    # set vars
     mode = file[0]
-    if mode == 'normal':
+    source = file[1]
+    dest = file[2]
+    if mode == 'normal' or mode == 'json':
         op = 'r'
         wr = 'w'
     elif mode == 'binary':
         op = 'rb'
         wr = 'wb'
-    source = file[1]
-    dest = file[2]
-    f = open(source, op)
-    content = f.read()
-    f.close()
-    f = open(dest, wr)
-    f.write(content)
-    f.close()
-    print(f'- wrote content from "{source}" to "{dest}"')
+
+    # r/w for anything besides json
+    if mode != 'json':
+        f = open(source, op)
+        content = f.read()
+        f.close()
+        f = open(dest, wr)
+        f.write(content)
+        f.close()
+        print(f'- wrote content from "{source}" to "{dest}"')
+    # r/w for json
+    elif mode == 'json':
+        f = open(source, op)
+        content = json.load(f)
+        f.close()
+        f = open(dest, wr)
+        json.dump(content, f)
+        f.close()
+        print(f'- wrote content from "{source}" to "{dest}"')
+    
+
 
 print('---------------')
 print('FOMX: cleaning up tmp...')

@@ -42,6 +42,8 @@ def update_handler_install(
     zip_path,
     everything_path,
     extract_path,
+    other_path,
+    back_everything,
     repo_url,
     commit_label,
     esif,
@@ -84,6 +86,11 @@ def update_handler_install(
         print('Update: Copying files...')
         c.copy(extract_path, everything_path)
 
+        # NEW SYSTEM FOR COPYING OVER EXTRA FILES (this is only in full-redo)
+        print('Update: Copying other files...')
+        for file in other_path:
+            c.copy(file, back_everything)
+ 
         print('Update: Redirecting shortcut...')
         import winshell
         desktop = winshell.desktop()     

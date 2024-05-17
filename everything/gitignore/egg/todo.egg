@@ -9,11 +9,12 @@
 - MAIN TODO
   - Clean up RELEASES
   - Find out how the tag system works
-  - Consider using the remote tunnel for VScode, run at home?
   - Make new updating system working, implement it
     - transfer over user specific data (colors.json, high_scores, etc?)
-  - if no shortcut during installer, tell them what file to run
   - add dev feature using old installer system in order to get the most recent files (also disclose the risks with this)
+
+  - Update installer
+    - add functionality for default path in program files (sys protected, use documents instead?)
     
   - Update rhythm game
     - Update score handling
@@ -24,6 +25,4 @@
     - add volume controls
     - divider lines upwards lining up with letters (between letter and zone) - NOTE: HAS TO FADE
     - choose better colors for end-screen
-
-  - use github LFS - large file storage
-    
+    - fix GIT LFS -> unkown WAVE format error, something with how it treats the file endings (made discussion post)

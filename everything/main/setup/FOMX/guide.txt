@@ -3,21 +3,43 @@ If your curious, FOMX stands for:
 - Overwriting
 - Management
 - X-press
+Credits to my ~ windy ~ friend for inspiring this name :3 
+
+-------------------------------------------------------------------------------------------
+
+IMPORTANT
+- FILE DETAILS AND FILE PATHS MUST BE IN THE SAME ORDER, DUE TO HOW IT IS HANDLED
+- JSON IS NOT CURRENTLY SUPPORTED IN FOMX RELEASE
+- THE FOLLOWING FILES CAN NOT BE INFLUENCED BY FOMX:
+    - obviously, fomx.py
+        - copy.py and download.py can not be accessed if there is no pycache, 
+          they can be (THIS HAS NOT BEEN TESTED, PLEASE REFRAIN FROM DOING THIS IN A 
+          PUBLIC RELEASE)
+    - and audio files (.mp3, .wav, etc)
+    - any folders
+    - fiesta.exe
+    - full-redo.py
+    - full-redo.exe
+    - IF NOT THESE, THEN THE FILE IS AVAILABLE FOR READ/WRITE
+
+-------------------------------------------------------------------------------------------
 
 Here is how data is formatted:
 {
     "description": "This is an example message about a small release message! This is in the body of the release.",
+    "version": "0/20",
     "file_details": [["file.py", "normal"], ["file.exe", "binary"], ["data.json", "json"]],
     "file_paths": ["everything/blah/blah/blah", "everything/blah"]
 }
 
-FILE_DETAILS AND FILE_PATHS MUST BE IN THE SAME ORDER, DUE TO HOW IT IS HANDLED LATER
-JSON IS NOT CURRENTLY SUPPORTED IN CODE
-
 Explanation:
 - description:
     - is used to display in console IF THE USER WANTS TO.
+- version:
+    - how many files are affected in the patch, up to 20. When it reaches 20 / it has been two months, the patches get reset and an update is put out.
 - file_details:
     - is used for the file names, and what type of read/write mode they need (read binary and write binary, normal read and write, etc).
 - file_paths:
     - is used to get the file path BESIDES the file itself. So file_details[0] needs to be added onto this.
+
+-------------------------------------------------------------------------------------------
