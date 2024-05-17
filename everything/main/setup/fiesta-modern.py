@@ -721,7 +721,7 @@ try:
                     # new experimental copying system for extra files
                     print(f'Update: Copying IMPORTANT files to {back_extract}...')
                     for file in other_paths:
-                        print('Copying:', file[1])
+                        print('- copying:', file[1])
                         c.copy(file[0], f'{back_extract}/{file[1]}', mode='file')
                     
                     print('Update: Cleaning up tmp...')
