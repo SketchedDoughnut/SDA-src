@@ -16,3 +16,9 @@ Implementing the FOMX system, a small patch-agent that grabs data from its own r
 
 Added copying for files not in the everything directory (such as LICENSE, this changelog, README, etc) to both full-redo.exe as well as fiesta-modern.exe (this has been updated on the SDA repository too).
 - commit label: [feb7522](https://github.com/SketchedDoughnut/SDA-src/commit/feb752286b83275c9ac4f12fffad8137e2714c05)
+
+# 5/17/24
+**v1.0.4-bugfix, v1.0.4-bf1**
+
+I did a lot of updates, such as fixing FOMX and other stuff. I am leaning decently heavily on the FOMX systems to patch updates after install, however the rhythm game is not working.
+- commit label: [b1cc712](https://github.com/SketchedDoughnut/SDA-src/commit/b1cc71224b90f79a5c4c4186ea8873eef4ccfec3)
