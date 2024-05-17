@@ -703,15 +703,15 @@ try:
                     back_extract = self.install_path
                     other_paths = [ 
                         # all MD
-                        f"{back_extract}/changelog.md",
-                        f"{back_extract}/README.md",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/README.md",
                         # all extensionless (txt)
-                        f"{back_extract}/.gitattributes.txt",
-                        f"{back_extract}/LICENSE.txt",
-                        f"{back_extract}/Pipfile.txt",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/.gitattributes.txt",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/LICENSE.txt",
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.txt",
                         # all other types (.lock, other .txt)
-                        f"{back_extract}/requirements.txt", 
-                        f"{back_extract}/Pipfile.lock"
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/requirements.txt", 
+                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock"
                     ]
 
                     print(f'Update: Copying files to {copy_location}')
@@ -720,7 +720,7 @@ try:
 
                     # new experimental copying system for extra files
                     for file in other_paths:
-                        c.copy(file, back_extract)
+                        shutil.copyfile(file, back_extract)
                     
                     print('Update: Cleaning up tmp...')
                     try:
