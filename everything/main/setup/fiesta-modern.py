@@ -680,8 +680,8 @@ try:
                     os.mkdir(f'{self.install_path}/tmp')
 
                     # downloading .zip
-                    repo_url = "https://api.github.com/repos/SketchedDoughnut/development/releases/latest"
-                    #repo_url = "https://api.github.com/repos/SketchedDoughnut/SDA-src/releases/latest"
+                    #repo_url = "https://api.github.com/repos/SketchedDoughnut/development/releases/latest"
+                    repo_url = "https://api.github.com/repos/SketchedDoughnut/SDA-src/releases/latest"
                     # TRANSITION TO NEW REPO! LETS SEE HOW THIS GOES WOOOOOOOOOOOOOOOOOOOOOOO
                     
                     print('Update: Downloading .zip...')
@@ -715,7 +715,7 @@ try:
                     ]
 
                     print(f'Update: Copying files to {copy_location}')
-                    copy_source = f"{ext_download_path}/SketchedDoughnut-development-{self.release_version}/everything/"
+                    copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/everything/"
                     c.copy(copy_source, copy_location)
 
                     # new experimental copying system for extra files
