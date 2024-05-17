@@ -193,7 +193,7 @@ def yes_confirm():
     f.close()
     text_msg = 'Please relaunch.'
     print('Update setup finished')
-    time.sleep(1.5)
+    time.sleep(5)
     exit_handler()
 
     pass
