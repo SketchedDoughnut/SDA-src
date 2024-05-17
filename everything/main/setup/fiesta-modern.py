@@ -583,7 +583,7 @@ try:
                     
                     elif state == 'location':
                         print('input the absolute path to the installation location.')
-                        self.install_path = self.install_path_format(input('--> '))
+                        self.install_path = self.install_path_format(input('--> '))[0]
                         print(f'path changed to: {self.install_path}')
                     
 
