@@ -720,7 +720,7 @@ try:
 
                     # new experimental copying system for extra files
                     for file in other_paths:
-                        shutil.copyfile(file, back_extract)
+                        c.copy(file, back_extract, mode='file')
                     
                     print('Update: Cleaning up tmp...')
                     try:
