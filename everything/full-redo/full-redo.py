@@ -66,7 +66,7 @@ zip_path = f'{tmp_path}/latest-release.zip'
 
 # extract path for install
 extract_path = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}/everything"
-back_extract = os.path.dirname(extract_path)
+back_extract = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}"
 other_paths = [ 
     # all MD
     [f"{back_extract}/changelog.md", 'changelog.md'],
