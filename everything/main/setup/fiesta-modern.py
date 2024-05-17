@@ -700,7 +700,7 @@ try:
                     self.release_version = release_version[0]
 
                     copy_location = f'{(self.install_path)}/everything'
-                    back_extract = self.install_path
+                    back_extract = f'{self.install_path}/'
                     other_paths = [ 
                         # all MD
                         f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md",
