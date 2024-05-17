@@ -700,18 +700,18 @@ try:
                     self.release_version = release_version[0]
 
                     copy_location = f'{(self.install_path)}/everything'
-                    back_extract = f'{self.install_path}/IMPORTANT/'
+                    back_extract = f'{self.install_path}'
                     other_paths = [ 
                         # all MD
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md",
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/README.md",
-                        # all extensionless
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/.gitattributes",
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/LICENSE",
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile",
-                        # all other types (.lock, other .txt)
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/requirements.txt", 
-                        f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock"
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/changelog.md", 'changelog.md'],
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/README.md", 'README.md'],
+                        # all extensionless,
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/.gitattributes", '.gitattributes'],
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/LICENSE", 'LICENSE'],
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile", 'Pipfile'],
+                        # all other types (.lock, other .txt),
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/requirements.txt", 'requirements.txt'],
+                        [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock", 'Pipfile.lock']
                     ]
 
                     print(f'Update: Copying files to {copy_location}...')
@@ -721,7 +721,8 @@ try:
                     # new experimental copying system for extra files
                     print(f'Update: Copying IMPORTANT files to {back_extract}...')
                     for file in other_paths:
-                        c.copy(file, back_extract, mode='file')
+                        print('Copying:', file[1])
+                        c.copy(file[0], f'{back_extract}/{file[1]}', mode='file')
                     
                     print('Update: Cleaning up tmp...')
                     try:
