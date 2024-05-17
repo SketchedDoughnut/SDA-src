@@ -66,18 +66,18 @@ zip_path = f'{tmp_path}/latest-release.zip'
 
 # extract path for install
 extract_path = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}/everything"
-back_extract = os.path.diranme(extract_path)
+back_extract = os.path.dirname(extract_path)
 other_paths = [ 
     # all MD
-    f"{back_extract}/changelog.md",
-    f"{back_extract}/README.md",
-    # all extensionless (txt)
-    f"{back_extract}/.gitattributes.txt",
-    f"{back_extract}/LICENSE.txt",
-    f"{back_extract}/Pipfile.txt",
-    # all other types (.lock, other .txt)
-    f"{back_extract}/requirements.txt", 
-    f"{back_extract}/Pipfile.lock"
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/changelog.md", 'changelog.md'],
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/README.md", 'README.md'],
+    # all extensionless,
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/.gitattributes", '.gitattributes'],
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/LICENSE", 'LICENSE'],
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/Pipfile", 'Pipfile'],
+    # all other types (.lock, other .txt),
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/requirements.txt", 'requirements.txt'],
+    [f"{back_extract}/SketchedDoughnut-SDA-src-{commit_label}/Pipfile.lock", 'Pipfile.lock']
 ]
 
 # everything path
