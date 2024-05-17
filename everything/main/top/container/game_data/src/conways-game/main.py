@@ -1,23 +1,30 @@
 ########################################################################
 class Crash_Handler:
-    def __init__(self, wDir, error):
-        print('------------------')
-        print('Crash Handler setting up...')
-        con = self.convert_path(wDir, '/')
-        con = self.split_path(con)
-        con = self.assemble_path(con)
-        con = self.promote_path(con)
-        print('Path formatted...')
-        dumps_path = self.assemble_dir(con)
-        print('Directory assembled...')
-        con = self.get_data(dumps_path)
-        self.dump_data(con, error)
-        print('Data acquired, dumped...')
-        print('------------------')
-        print('Crash documented to:', f'{con}')
-        print('------------------')
-        input('Enter anything to exit: ')
-        exit()
+    def __init__(self, wDir, error, mode='run'):
+        if mode == 'run':
+            print('------------------')
+            print('Crash Handler setting up...')
+            con = self.convert_path(wDir, '/')
+            con = self.split_path(con)
+            con = self.assemble_path(con)
+            con = self.promote_path(con)
+            print('Path formatted...')
+            dumps_path = self.assemble_dir(con)
+            print('Directory assembled...')
+            con = self.get_data(dumps_path)
+            self.dump_data(con, error)
+            print('Data acquired, dumped...')
+            print('------------------')
+            print('Crash documented to:', f'{con}')
+            print('------------------')
+            input('Enter anything to exit: ')
+            exit()
+        elif mode == 'setup':
+            pass
+        else:
+            print('Invalid crash handler initialization.')
+            import sys
+            sys.exit()
 
     def convert_path(self, path, mode):
         n_string = ''
@@ -144,6 +151,7 @@ try:
     start_menu = True
     space_pressed = False
     running = True
+    can_exit = True
 
     import start_screen
     SS = start_screen.StartScreen(WINDOW)
@@ -153,8 +161,11 @@ try:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                print('window quit')
-                running = False
+                if can_exit:
+                    print('window quit')
+                    running = False
+                else:
+                    print('cannot exit: a task is running')
             
             elif event.type == pygame.WINDOWRESIZED:
                 SS = start_screen.StartScreen(WINDOW)
@@ -202,8 +213,41 @@ try:
                 # ik its diff let me have this
                 keys = pygame.key.get_pressed()
                 if keys[pygame.K_LCTRL] and keys[pygame.K_c] or keys[pygame.K_LCTRL] and keys[pygame.K_w]:
-                    print('ctrl + c / ctrl + w')
-                    running = False
+                    if can_exit:
+                        print('ctrl + c / ctrl + w')
+                        running = False
+                    else:
+                        print('cannot exit: a task is running')
+                elif keys[pygame.K_o]:
+                    print('outputting file...')
+                    try:
+                        can_exit = False
+                        c = Crash_Handler(None, None, 'setup')
+                        timee = c.format_time()
+                        import os
+                        log_wDir = os.path.abspath(__file__)
+                        path = c.convert_path(log_wDir, '/')
+                        path = c.split_path(path)
+                        path = c.assemble_path(path)
+                        path = c.convert_path(path, '\\')
+                        #print('before mk:', path)
+                        try:
+                            os.mkdir(f'{path}\\maps')
+                        except:
+                            pass
+                        #print('after mk:', path)
+                        path = c.convert_path(path, '/')
+                        #print('conv back:', path)
+                        f = open(f'{path}/maps/map_{timee}.json', 'w')
+                        import json
+                        json.dump(board_gen.get_current_board(), f)
+                        f.close()
+                        print(f'logged map to: {path}/maps/map_{timee}.json')
+                        can_exit = True
+                    except Exception as e:
+                        print('output map error:', e)
+                        raise 'outputMapError'
+
 
                 if event.key == pygame.K_SPACE:
                     if start_menu == True:
