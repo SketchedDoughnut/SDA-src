@@ -135,11 +135,16 @@ for path, file in zip(bounds['file_paths'], bounds['file_details']):
     )
 
 print('---------------')
+print('FOMX: Checking for CMD file...')
+do_cmd = bounds['cmd_exist']
+if do_cmd == True:
+    print('FOMX: CMD file found, running CMD...')
+    cmd_reader.read_commands(above_everything_dir, os.path.join(tmp_path, 'necessary/cmd.txt'))
+
+print('---------------')
 print('FOMX: verifying files exist...')
 for data in n_list:
     print('- verifying:', data)
-    if data[3] == 'cmd.txt':
-        continue
     if not os.path.exists(data[1]): # if destination exists
         print('-- source does not exist.')
         exit()
@@ -148,12 +153,6 @@ for data in n_list:
     #     exit() 
 print('FOMX: all files exist.')
 print('---------------')
-
-print('FOMX: Checking for CMD file...')
-if bounds['file_details'][0] == 'cmd.txt':
-    print('FOMX: CMD file found, running CMD...')
-    cmd_reader.read_commands(above_everything_dir, os.path.join(tmp_path, 'necessary/cmd.txt'))
-
 print('FOMX: Copying over code...')
 time.sleep(0.5)
 for file in n_list:
