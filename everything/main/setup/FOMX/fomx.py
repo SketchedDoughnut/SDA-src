@@ -138,6 +138,8 @@ print('---------------')
 print('FOMX: verifying files exist...')
 for data in n_list:
     print('- verifying:', data)
+    if data[3] == 'cmd.txt':
+        continue
     if not os.path.exists(data[1]): # if destination exists
         print('-- source does not exist.')
         exit()
