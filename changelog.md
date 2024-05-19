@@ -28,3 +28,9 @@ I did a lot of updates, such as fixing FOMX and other stuff. I am leaning decent
 
 I released some updates for Conways Game Of Life, such as letting people import / export maps. I also included a default map, the glider gun. More of these will be released later.
 - commit label: [b8bf33c](https://github.com/SketchedDoughnut/SDA-src/commit/b8bf33c3f03c738cb92c1aa848fddab0a29c54af)
+
+# 5/18/24
+**v1.0.6**
+
+Updates attempted, breakdowns occured, rollbacks commited.
+- commit label: [8e0b39a](https://github.com/SketchedDoughnut/SDA-src/commit/8e0b39a880cc2de35f659d0a58e0ec88ed1f94db)
