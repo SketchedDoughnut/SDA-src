@@ -139,7 +139,7 @@ print('FOMX: Checking for CMD file...')
 do_cmd = bounds['cmd_exist']
 if do_cmd == True:
     print('FOMX: CMD file found, running CMD...')
-    cmd_reader.read_commands(above_everything_dir, os.path.join(tmp_path, 'necessary/cmd.txt'))
+    cmd_reader.read_commands(above_everything_dir, os.path.join(copy_location, 'necessary/cmd.txt'))
 
 print('---------------')
 print('FOMX: verifying files exist...')
