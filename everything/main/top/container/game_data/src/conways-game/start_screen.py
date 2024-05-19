@@ -156,7 +156,7 @@ class StartScreen:
         button_width = self.bg_width / 4
         button_height = self.scale(50, 'y')
         button_x = self.bg_x - self.scale(577.5, 'x')
-        button_y = self.bg_y + self.scale(75, 'y')
+        button_y = self.bg_y + self.scale(155, 'y')
         self.assemble_button(
             button_color,
             button_x,
@@ -171,7 +171,7 @@ class StartScreen:
         txt_msg = 'learn more'
         txt_size = self.scale(45, 'x')
         txt_x = (self.bg_x / 2) - self.scale(60, 'x')
-        txt_y = self.bg_y  + self.scale(77, 'y')
+        txt_y = self.bg_y  + self.scale(157, 'y')
         self.assemble_text(
             txt_color,
             txt_size,
@@ -183,8 +183,8 @@ class StartScreen:
         ## assemble title text
         txt_color = self.colors['black']
         txt_msg = 'Conways Game of Life'
-        txt_size = self.scale(60, 'x')
-        txt_x = ((self.bg_x + self.bg_width / 2)) - ((self.bg_width / 2) + self.scale(300, 'x'))
+        txt_size = self.scale(75, 'x')
+        txt_x = ((self.bg_x + self.bg_width / 2)) - ((self.bg_width / 2) + self.scale(375, 'x'))
         txt_y = (self.bg_y - self.bg_height / 2) + self.scale(20, 'y')
         self.assemble_text(
             color = txt_color, 
@@ -205,9 +205,9 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = '- space to pause/play'
-        txt_size = self.scale(45, 'x')
-        txt_x += self.scale(70, 'x')
+        txt_msg = '- space to pause/play -'
+        txt_size = self.scale(42.5, 'x') # originally 45
+        txt_x += self.scale(175, 'x') # originally 70
         txt_y += self.scale(75, 'y')
         self.assemble_text(
             color = txt_color,
@@ -217,7 +217,8 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = '- r to reset board'
+        txt_msg = '- r to reset board -'
+        txt_x += self.scale(45, 'x')
         txt_y += self.scale(60, 'y')
         self.assemble_text(
             color = txt_color,
@@ -227,7 +228,8 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = '- left click to single paint'
+        txt_msg = '- left click to single paint -'
+        txt_x -= self.scale(85, 'x')
         txt_y += self.scale(60, 'y')
         self.assemble_text(
             color = txt_color,
@@ -237,7 +239,8 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = '- right click to paintbrush'
+        txt_msg = '- right click to paintbrush -'
+        txt_x -= self.scale(7.5, 'x')
         txt_y += self.scale(60, 'y')
         self.assemble_text(
             color = txt_color,
@@ -248,7 +251,8 @@ class StartScreen:
         )
         
 
-        txt_msg = '- esc to open this menu'
+        txt_msg = '- esc to open this menu -'
+        txt_x += self.scale(22.5, 'x')
         txt_y += self.scale(60, 'y')
         self.assemble_text(
             color = txt_color,
@@ -258,10 +262,32 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = 'Credits'
+        txt_msg = '- O to export map, I to import -'
+        txt_x -= self.scale(50, 'x')
+        txt_y += self.scale(60, 'y')
+        self.assemble_text(
+            color = txt_color,
+            size = txt_size,
+            txt_msg = txt_msg,
+            x = txt_x,
+            y = txt_y
+        )
+        
+        txt_msg = '____________'
         txt_size += self.scale(15, 'x')
-        txt_x += self.scale(125, 'x')
-        txt_y += self.scale(115, 'y')
+        txt_x += self.scale(115, 'x')
+        txt_y += self.scale(15, 'y')
+        self.assemble_text(
+            color = txt_color,
+            size = txt_size,
+            txt_msg = txt_msg,
+            x = txt_x,
+            y = txt_y
+        )
+
+        txt_msg = '~ Credits ~'
+        txt_x += self.scale(40, 'x') # originally 125
+        txt_y += self.scale(60, 'y') # originally 115
         self.assemble_text(
             color = txt_color,
             size = txt_size,
@@ -271,8 +297,8 @@ class StartScreen:
         )
 
         txt_msg = '____________'
-        txt_x -= self.scale(100, 'x')
-        txt_y += self.scale(30, 'y')
+        txt_x -= self.scale(40, 'x') # originally 100
+        txt_y += self.scale(15, 'y')
         self.assemble_text(
             color = txt_color,
             size = txt_size,
@@ -283,6 +309,7 @@ class StartScreen:
 
         txt_msg = 'Sketched Doughnut'
         txt_size -= self.scale(15, 'x')
+        txt_x -= self.scale(5, 'x')
         txt_y += self.scale(75, 'y')
         self.assemble_text(
             color = txt_color,
@@ -328,7 +355,9 @@ class StartScreen:
 
     
     ## DRAW FUNCTION
-    def draw(self) -> bool:
+    def draw(self, board: list) -> bool:
+        # selfs
+        self.board = board
         pressed = pygame.mouse.get_pressed()
 
         for bg in self.bg_queue:
@@ -349,7 +378,7 @@ class StartScreen:
         for text in self.text_queue:
             self.window.blit(text[0], text[1])
 
-        return True
+        return True, self.board
 
 
 
@@ -375,7 +404,11 @@ class StartScreen:
     # basic function to close menu
     def close_menu(self) -> bool:
         print('menu closed')
-        return False # to end start_menu
+        # import eval
+        # width = 100
+        # height = width
+        # self.board = eval.GenerateBoard(width, height)
+        return False, self.board # to end start_menu
     
     def learn_more(self) -> None:
         import os

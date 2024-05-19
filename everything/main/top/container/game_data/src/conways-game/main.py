@@ -112,9 +112,32 @@ try:
     import pygame
     import rendering
     import time
+    import threading
 
     # my files
     import eval
+    import loads
+    import start_screen
+
+
+
+
+
+    def pho_run(window: pygame.Surface, text: str, text_rect: pygame.Rect) -> None:
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    if can_exit:
+                        print('window quit')
+                        global running
+                        running = False
+                    else:
+                        print('cannot exit: a task is running')
+            window.blit(text, text_rect)
+            pygame.display.update()
+
+
+
 
     pygame.init()
     WINDOW = pygame.display.set_mode((600,400), pygame.RESIZABLE)
@@ -132,6 +155,7 @@ try:
     width = 100
     height = 100
     board_gen = eval.GenerateBoard(width, height)
+
     generationTickRate = 5
     lastTime = time.perf_counter()
     tickTimer = 0
@@ -153,7 +177,6 @@ try:
     running = True
     can_exit = True
 
-    import start_screen
     SS = start_screen.StartScreen(WINDOW)
     while running:
 
@@ -223,7 +246,7 @@ try:
                     try:
                         can_exit = False
                         c = Crash_Handler(None, None, 'setup')
-                        timee = c.format_time()
+                        now_time = c.format_time()
                         import os
                         log_wDir = os.path.abspath(__file__)
                         path = c.convert_path(log_wDir, '/')
@@ -232,21 +255,47 @@ try:
                         path = c.convert_path(path, '\\')
                         #print('before mk:', path)
                         try:
-                            os.mkdir(f'{path}\\maps')
+                            os.mkdir(f'{path}\\maps_out')
                         except:
                             pass
                         #print('after mk:', path)
                         path = c.convert_path(path, '/')
                         #print('conv back:', path)
-                        f = open(f'{path}/maps/map_{timee}.json', 'w')
+                        f = open(f'{path}/maps_out/map_{now_time}.json', 'w')
                         import json
                         json.dump(board_gen.get_current_board(), f)
                         f.close()
-                        print(f'logged map to: {path}/maps/map_{timee}.json')
+                        print(f'logged map to: {path}/maps_out/map_{now_time}.json')
                         can_exit = True
                     except Exception as e:
                         print('output map error:', e)
                         raise 'outputMapError'
+                    
+                elif keys[pygame.K_i]:
+                    if start_menu == True:
+                        map_path = loads.load_map()
+                        print('----------------------')
+                        print('Restarting window...')
+                        pygame.init()
+                        WINDOW = pygame.display.set_mode((600,400), pygame.RESIZABLE)
+                        pygame.display.set_caption('Conways Game Of Life')
+                        # create loading text
+                        f_size = round(36) # size is normally 36 in other projects
+                        font = pygame.font.Font('freesansbold.ttf', f_size)
+                        msg = 'Loading map...'
+                        msg = font.render(msg, True, (255, 255, 255), None)  # text, some bool(?), text color, bg color
+                        rect = msg.get_rect()
+                        rect.center = (pygame.display.get_window_size()[0] / 2, pygame.display.get_window_size()[1] / 2)
+                        # pho_thread = threading.Thread(target=lambda:pho_run(WINDOW, msg, rect))
+                        # pho_thread.start()
+                        WINDOW.blit(msg, rect)
+                        pygame.display.update()
+                        print('Loading map, start screen...')
+                        board_gen = eval.GenerateBoard(width, height, load_map = map_path)
+                        SS = start_screen.StartScreen(WINDOW)
+                        print('Loading done')
+                        #pho_thread.join()
+                        print('----------------------')
 
 
                 if event.key == pygame.K_SPACE:
@@ -261,7 +310,8 @@ try:
                 elif event.key == pygame.K_ESCAPE:
                     print('menu invoked')
                     paused = True
-                    start_menu = True
+                    #start_menu = True
+                    start_menu = not start_menu
                 
         deltaTime = time.perf_counter() - lastTime
         lastTime = time.perf_counter()
@@ -273,7 +323,7 @@ try:
                 new_board = board_gen.gen_new_board()
         renderer.tick(WINDOW, current_board)
         if start_menu == True:
-            start_menu = SS.draw()
+            start_menu, board_gen = SS.draw(board_gen)
         if tickTimer > 1 / generationTickRate:
             if paused == False:
                 current_board = new_board

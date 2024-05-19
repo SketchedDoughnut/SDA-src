@@ -1,17 +1,24 @@
 ## classes
 class GenerateBoard:
     # init
-    def __init__(self, width: int, height: int) -> None:
-        board = []
-        n_list = []
+    def __init__(self, width: int, height: int, load_map = None) -> None:
         self.width = width
         self.height = height
-        for x in range(width): # x for visualization
-            for y in range(height): # y for visualization
-                n_list.append(False)
-            board.append(n_list)
+        if load_map == None:
+            board = []
             n_list = []
-        self.board = board
+            for x in range(width): # x for visualization
+                for y in range(height): # y for visualization
+                    n_list.append(False)
+                board.append(n_list)
+                n_list = []
+            self.board = board
+        else:
+            f = open(load_map, 'r')
+            import json
+            board = json.load(f)
+            f.close()
+            self.board = board
 
     # handler for generating a new board
     def gen_new_board(self):
