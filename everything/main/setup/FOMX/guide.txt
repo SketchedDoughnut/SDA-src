@@ -43,3 +43,13 @@ Explanation:
     - is used to get the file path BESIDES the file itself. So file_details[0] needs to be added onto this.
 
 -------------------------------------------------------------------------------------------
+
+Here are the commands read by cmd_reader:
+
+end: ends the reading of commands
+mkdir: makes a directory
+rmdir: removes a directory
+mkfile: makes an empty file
+rmfile: removes a file
+ 
+NOTE: THIS IS RAN BEFORE ANY DOWNLOADS
