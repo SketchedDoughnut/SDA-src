@@ -150,7 +150,7 @@ print('---------------')
 print('FOMX: Checking for CMD file...')
 if bounds['file_details'][0] == 'cmd.txt':
     print('FOMX: CMD file found, running CMD...')
-    cmd_reader.read_commands(above_everything_dir, bounds['file_paths'][0])
+    cmd_reader.read_commands(above_everything_dir, os.path.join(tmp_path, 'necessary/cmd.txt'))
 
 print('FOMX: Copying over code...')
 time.sleep(0.5)
