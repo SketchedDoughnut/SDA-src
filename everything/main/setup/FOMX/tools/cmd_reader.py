@@ -6,7 +6,7 @@ def read_commands(above_everything_dir, cmd_dir) -> None:
     f = open(cmd_dir, 'r')
     cmds = f.readlines()
     f.close()
-
+    print('---------------')
     for cmdd in cmds:
         line = cmdd.split()
         cmd = line[0]
