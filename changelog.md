@@ -34,3 +34,9 @@ I released some updates for Conways Game Of Life, such as letting people import 
 
 Updates attempted, breakdowns occured, rollbacks commited.
 - commit label: [8e0b39a](https://github.com/SketchedDoughnut/SDA-src/commit/8e0b39a880cc2de35f659d0a58e0ec88ed1f94db)
+
+# 5/19/24
+**v1.0.6-feature.0**
+
+Re-enabling the cmd_reader on FOMx, as it seems to now be working.
+- commit label: [30561ac](https://github.com/SketchedDoughnut/SDA-src/commit/30561acf7ebce1d78b38b85ad2830859810846f5)

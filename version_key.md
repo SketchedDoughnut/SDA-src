@@ -1,4 +1,6 @@
 # Key 
 **a key for seeing what version release names mean.**
-bf - bugfix
-vX.X.X - a normal release
+
+- bf - bugfix <br>
+- vX.X.X - a normal release <br>
+- feature - a feature release <br>
