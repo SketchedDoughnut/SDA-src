@@ -22,3 +22,9 @@ Added copying for files not in the everything directory (such as LICENSE, this c
 
 I did a lot of updates, such as fixing FOMX and other stuff. I am leaning decently heavily on the FOMX systems to patch updates after install, however the rhythm game is not working.
 - commit label: [b1cc712](https://github.com/SketchedDoughnut/SDA-src/commit/b1cc71224b90f79a5c4c4186ea8873eef4ccfec3)
+
+# 5/18/24
+**v1.0.5, v1.0.5-bf0**
+
+I released some updates for Conways Game Of Life, such as letting people import / export maps. I also included a default map, the glider gun. More of these will be released later.
+- commit label: [b8bf33c](https://github.com/SketchedDoughnut/SDA-src/commit/b8bf33c3f03c738cb92c1aa848fddab0a29c54af)
