@@ -241,7 +241,7 @@ try:
                         running = False
                     else:
                         print('cannot exit: a task is running')
-                elif keys[pygame.K_o]:
+                elif keys[pygame.K_e]:
                     print('outputting file...')
                     try:
                         can_exit = False

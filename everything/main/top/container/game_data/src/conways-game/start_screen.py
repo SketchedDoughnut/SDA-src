@@ -262,7 +262,7 @@ class StartScreen:
             y = txt_y
         )
 
-        txt_msg = '- O to export map, I to import -'
+        txt_msg = '- E to export map, I to import -'
         txt_x -= self.scale(50, 'x')
         txt_y += self.scale(60, 'y')
         self.assemble_text(
