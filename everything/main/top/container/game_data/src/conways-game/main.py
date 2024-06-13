@@ -113,6 +113,7 @@ try:
     import rendering
     import time
     import threading
+    import tkinter # window stuff
 
     # my files
     import eval
@@ -265,7 +266,25 @@ try:
                         import json
                         json.dump(board_gen.get_current_board(), f)
                         f.close()
-                        print(f'logged map to: {path}/maps_out/map_{now_time}.json')
+                        # print(f'logged map to: {path}/maps_out/map_{now_time}.json') # replaced with tkinter window
+
+                        screen_width, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h
+                        # goal_width = 1250
+                        # goal_height = 500
+                        # scaled_width = goal_width / 1920 * screen_width
+                        # scaled_height = goal_height / 1080 * screen_height
+                        # scaled_width = round(scaled_width)
+                        # scaled_height = round(scaled_height)
+                        window = tkinter.Tk(className="window~!")
+                        # window.geometry(f"{scaled_width}x{scaled_height}")
+                        string_var = tkinter.StringVar()
+                        string_var.set(f'logged map to: {path}/maps_out/map_{now_time}.json')
+                        text = tkinter.Label(window, pady=25, textvariable=string_var)
+                        text.pack()
+                        button = tkinter.Button(window, width=25, text="close this window", command=window.destroy, pady=5)
+                        button.pack()
+                        window.mainloop()
+
                         can_exit = True
                     except Exception as e:
                         print('output map error:', e)
@@ -273,7 +292,10 @@ try:
                     
                 elif keys[pygame.K_i]:
                     if start_menu == True:
-                        map_path = loads.load_map()
+                        m1 = loads.Map_loader()
+                        # map_path = loads.load_map()
+                        m1.load_map()
+                        map_path = m1.map_path
                         print('----------------------')
                         print('Restarting window...')
                         pygame.init()
