@@ -3,3 +3,9 @@ Google doc:
 
 Wiki page:
     - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+Helpful info:
+    - https://stackoverflow.com/questions/52821848/tkinter-tclerror-invalid-command-name-entry
+    - https://www.tutorialspoint.com/return-the-input-of-the-entry-widget-in-tkinter#:~:text=An%20Entry%20widget%20in%20Tkinter,be%20printed%20on%20the%20console.
+    - https://www.geeksforgeeks.org/how-to-change-the-tkinter-label-text/
+    - https://www.geeksforgeeks.org/python-gui-tkinter/
