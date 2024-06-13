@@ -14,9 +14,10 @@ import sys
 import requests
 
 # file imports
-import tools.download as download
-import tools.extract as extract
-import tools.cmd_reader as cmd_reader
+# import tools.download as download
+# import tools.extract as extract
+# import tools.cmd_reader as cmd_reader
+import tools
 
 # ---------------------------------------------
 url = 'https://api.github.com/repos/SketchedDoughnut/SDA-FOMX/releases/latest'
@@ -92,11 +93,13 @@ except:
 os.mkdir(tmp_path)
 
 print('FOMX: downloading .zip...')
-download.download_latest_release(url, zip_path)
+# download.download_latest_release(url, zip_path)
+tools.download.download_latest_release(url, zip_path)
 time.sleep(0.5)
 
 print('FOMX: extracting...')
-extract.extract(zip_path, tmp_path)
+# extract.extract(zip_path, tmp_path)
+tools.extract.extract(zip_path, tmp_path)
 
 print('FOMX: reading bounds file...')
 f = open(bounds_json, 'r')
@@ -119,7 +122,9 @@ print('FOMX: Checking for CMD file...')
 do_cmd = bounds['cmd_exist']
 if do_cmd == True:
     print('FOMX: CMD file found, running CMD...')
-    cmd_reader.read_commands(above_everything_dir, os.path.join(copy_location, 'necessary/cmd.txt'))
+    idk = os.path.join(copy_location, 'necessary/cmd.txt')
+    # cmd_reader.read_commands(above_everything_dir, os.path.join(copy_location, 'necessary/cmd.txt'))
+    tools.cmd_reader.read_commands(above_everything_dir, idk)
 
 print('---------------')
 print('FOMX: verifying files exist...')
