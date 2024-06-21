@@ -291,33 +291,33 @@ try:
                         raise 'outputMapError'
                     
                 elif keys[pygame.K_i]:
-                    if start_menu == True:
-                        m1 = loads.Map_loader()
-                        # map_path = loads.load_map()
-                        m1.load_map()
-                        map_path = m1.map_path
-                        print('----------------------')
-                        print('Restarting window...')
-                        pygame.init()
-                        WINDOW = pygame.display.set_mode((600,400), pygame.RESIZABLE)
-                        pygame.display.set_caption('Conways Game Of Life')
-                        # create loading text
-                        f_size = round(36) # size is normally 36 in other projects
-                        font = pygame.font.Font('freesansbold.ttf', f_size)
-                        msg = 'Loading map...'
-                        msg = font.render(msg, True, (255, 255, 255), None)  # text, some bool(?), text color, bg color
-                        rect = msg.get_rect()
-                        rect.center = (pygame.display.get_window_size()[0] / 2, pygame.display.get_window_size()[1] / 2)
-                        # pho_thread = threading.Thread(target=lambda:pho_run(WINDOW, msg, rect))
-                        # pho_thread.start()
-                        WINDOW.blit(msg, rect)
-                        pygame.display.update()
-                        print('Loading map, start screen...')
-                        board_gen = eval.GenerateBoard(width, height, load_map = map_path)
-                        SS = start_screen.StartScreen(WINDOW)
-                        print('Loading done')
-                        #pho_thread.join()
-                        print('----------------------')
+                    # if start_menu == True:
+                    m1 = loads.Map_loader()
+                    # map_path = loads.load_map()
+                    m1.load_map()
+                    map_path = m1.map_path
+                    # print('----------------------')
+                    # print('Restarting window...')
+                    # pygame.init()
+                    # WINDOW = pygame.display.set_mode((600,400), pygame.RESIZABLE)
+                    # pygame.display.set_caption('Conways Game Of Life')
+                    # # create loading text
+                    # f_size = round(36) # size is normally 36 in other projects
+                    # font = pygame.font.Font('freesansbold.ttf', f_size)
+                    # msg = 'Loading map...'
+                    # msg = font.render(msg, True, (255, 255, 255), None)  # text, some bool(?), text color, bg color
+                    # rect = msg.get_rect()
+                    # rect.center = (pygame.display.get_window_size()[0] / 2, pygame.display.get_window_size()[1] / 2)
+                    # # pho_thread = threading.Thread(target=lambda:pho_run(WINDOW, msg, rect))
+                    # # pho_thread.start()
+                    # WINDOW.blit(msg, rect)
+                    # pygame.display.update()
+                    # print('Loading map, start screen...')
+                    board_gen = eval.GenerateBoard(width, height, load_map = map_path)
+                    SS = start_screen.StartScreen(WINDOW)
+                    print('Loading done')
+                    #pho_thread.join()
+                    print('----------------------')
 
 
                 if event.key == pygame.K_SPACE:
