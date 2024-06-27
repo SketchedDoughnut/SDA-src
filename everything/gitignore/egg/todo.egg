@@ -53,6 +53,5 @@
       - make into standalone file imported by others: have files reach for crash handlers below them in the file tree                     (DONE)
     - design elevator                                                                                                                     (DONE)
     - create propogation tool for elevator and crash handler                                                                              (DONE)
-  - do test releases on the development page
-  - transfer files to SDA-SRC, and SDA with the affected files
-  - release update!
+  - transfer files to SDA-SRC, and SDA with the affected files                                                                            (DONE)
+  - release update!                                                                                                                       (DONE)
