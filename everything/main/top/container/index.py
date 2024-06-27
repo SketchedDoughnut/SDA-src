@@ -1,111 +1,12 @@
   # the coding gods have screwed me over and I need to redesign this program
 
 ########################################################################
-class Crash_Handler:
-    def __init__(self, wDir, error):
-        print('------------------')
-        print('Crash Handler setting up...')
-        con = self.convert_path(wDir, '/')
-        con = self.split_path(con)
-        con = self.assemble_path(con)
-        con = self.promote_path(con)
-        print('Path formatted...')
-        dumps_path = self.assemble_dir(con)
-        print('Directory assembled...')
-        con = self.get_data(dumps_path)
-        self.dump_data(con, error)
-        print('Data acquired, dumped...')
-        print('------------------')
-        print('Crash documented to:', f'{con}')
-        print('------------------')
-        input('Enter anything to exit: ')
-        exit()
-
-    def convert_path(self, path, mode):
-        n_string = ''
-        for letter in path:
-            if mode == '/':
-                if letter == '\\':
-                    n_string += '/'
-                else:
-                    n_string += letter
-            elif mode == '\\':
-                if letter == '/':
-                    n_string += '\\'
-                else:
-                    n_string += letter
-        return n_string
-    
-    def split_path(self, path):
-        n_string = ''
-        n_list = []
-        for letter in path:
-            if letter == '/':
-                n_list.append(n_string)
-                n_string = ''
-            else:
-                n_string += letter
-        while n_list[0] == " ":
-            n_list.pop(0)
-        return n_list
-    
-    def assemble_path(self, path_list):
-        n_string = ''
-        for word in path_list:
-            n_string += word
-            n_string += '/'
-        return n_string
-    
-    def remove_n_path_index(self, path):
-        path_list = self.split_path(path)
-        path_list.pop(len(path_list) - 1)
-        path = self.assemble_path(path_list)
-        return path_list, path
-    
-    def promote_path(self, path):
-        while True:
-            path_list, path = self.remove_n_path_index(path)
-            if path_list[len(path_list) - 1] == 'everything':
-                break
-        return path
-
-    def assemble_dir(self, path):
-        path += 'crash/dumps'
-        return path
-    
-    def format_time(self):
-        import time
-        s = (time.ctime(time.time()))
-        s = s.replace(':', '-')
-        s = s.split()
-        for __ in range(2):
-            s.pop(0)
-        n_string = ''
-        for num in s:
-            n_string += num
-            if s.index(num) != len(s) -1:
-                n_string += '_'
-        return n_string
-
-    def get_data(self, dumps_dir):
-        import os
-        import json
-        time_val = self.format_time()
-        nc_log = os.path.join(dumps_dir, f'crash_log_{time_val}.log')
-        nc_log = self.convert_path(nc_log, '\\')
-        return nc_log
-
-    def dump_data(self, path, error):
-        #import json
-        f = open(path, 'w')
-        #json.dump(error, f)
-        f.write(error)
-        f.close()
-
-########################################################################
 try:
   # import for initial
   import os
+
+  # file imports
+  import index_elevator as elevator
 
   # vars
   wDir = os.path.dirname(os.path.abspath(__file__))
@@ -123,7 +24,9 @@ try:
     #print('----------------------------')
     print(f'Running {setup_path_list[0][1]}...')
     print('----------------------------')
-    os.system(f'python {setup_path_list[0][0]}')
+    c1 = r'python {path}'.format(path=setup_path_list[0][0]) # calling string
+    # os.system(f'python {setup_path_list[0][0]}')
+    os.system(c1)
 
   imports()
 
@@ -149,7 +52,9 @@ try:
   def update():
     print('----------------------------')
     print(f'Running {setup_path_list[1][1]}...')
-    os.system(f'python {setup_path_list[1][0]}')
+    c2 = r'python {path}'.format(path=setup_path_list[1][0]) # calling string
+    # os.system(f'python {setup_path_list[1][0]}')
+    os.system(c2)
 
   class Format:
     def __init__(self):
@@ -263,14 +168,19 @@ try:
     
     if keys[K_s]:
       if s_pressed == False:
-        f = open(os.path.join(wDir, 'game_data/ignore/colors.json'), 'r')
+        path = elevator.Elevator.elevated_universe
+        # f = open(os.path.join(wDir, 'game_data/ignore/colors.json'), 'r')
+        path += '/index/colors.json'
+        f = open(path, 'r')
         color_load = list(json.load(f))
         f.close()
         color_load.append(color_list)
-        f = open(os.path.join(wDir, 'game_data/ignore/colors.json'), 'w')
+        # f = open(os.path.join(wDir, 'game_data/ignore/colors.json'), 'w')
+        f = open(path, 'w')
         json.dump(color_load, f)
         f.close()
-        print('- dumped colors into game_data/ignore/colors.json')
+        # print('- dumped colors into game_data/ignore/colors.json')
+        print(f'- dumped colors into {path}')
         s_pressed = True
     elif not keys[K_s]:
       s_pressed = False
@@ -315,7 +225,9 @@ try:
       print('----------------------------')
       running = path_list[num][1]
       print(f'Running {running}...')
-      os.system(f'python {path_list[num][0]}')
+      c3 = r'python {path}'.format(path=path_list[num][0])
+      # os.system(f'python {path_list[num][0]}')
+      os.system(c3)
       setup_bool = False
 
 
@@ -325,7 +237,7 @@ try:
 except Exception as e:
   import os
   import traceback
-  Crash_Handler(
-      wDir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+  import index_crash_handler
+  index_crash_handler.Crash_handler(
       error = traceback.format_exc()
   )

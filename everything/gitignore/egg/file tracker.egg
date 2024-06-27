@@ -1,0 +1,12 @@
+The following files have a crash handler:
+    - COMPILED FILES
+        - everything\main\setup\fiesta-modern.py
+        - everything\main\setup\fiesta.py
+
+    - RAW FILES
+        - everything\main\top\container\game_data\src\rhythm\rhythm.py
+        - everything\main\top\container\game_data\src\flappy\flappy.py
+        - everything\main\top\container\game_data\src\conways-game\main.py
+        - everything\main\top\container\index.py
+
+The following files have a elevator:

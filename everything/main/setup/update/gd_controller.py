@@ -58,7 +58,7 @@ def update_handler(
     if mode == 'game_data':
         print('---------------')
         print('Update: installing game_data')
-        print('If you want to backup your game_data, copy the directory now.')
+        # print('If you want to backup your game_data, copy the directory now.')
         print(f'The directory is: {main_wDir}/top/container/game_data')
         if input('Continue? (y/n) ').lower() != 'y':
             print('---------------')

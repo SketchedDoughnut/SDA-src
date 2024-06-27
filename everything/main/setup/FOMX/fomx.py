@@ -94,12 +94,14 @@ os.mkdir(tmp_path)
 
 print('FOMX: downloading .zip...')
 # download.download_latest_release(url, zip_path)
-tools.download.download_latest_release(url, zip_path)
+# tools.download.download_latest_release(url, zip_path)
+tools.download_latest_release(url, zip_path)
 time.sleep(0.5)
 
 print('FOMX: extracting...')
 # extract.extract(zip_path, tmp_path)
-tools.extract.extract(zip_path, tmp_path)
+# tools.extract.extract(zip_path, tmp_path)
+tools.extract(zip_path, tmp_path)
 
 print('FOMX: reading bounds file...')
 f = open(bounds_json, 'r')
@@ -124,7 +126,8 @@ if do_cmd == True:
     print('FOMX: CMD file found, running CMD...')
     idk = os.path.join(copy_location, 'necessary/cmd.txt')
     # cmd_reader.read_commands(above_everything_dir, os.path.join(copy_location, 'necessary/cmd.txt'))
-    tools.cmd_reader.read_commands(above_everything_dir, idk)
+    # tools.cmd_reader.read_commands(above_everything_dir, idk)
+    tools.read_commands(above_everything_dir, idk)
 
 print('---------------')
 print('FOMX: verifying files exist...')

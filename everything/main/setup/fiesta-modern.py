@@ -19,108 +19,6 @@ import urllib.request
     "bounds": "x"
 }
 '''
-########################################################################
-class Crash_Handler:
-    def __init__(self, wDir, error):
-        print('------------------')
-        print('Crash Handler setting up...')
-        con = self.convert_path(wDir, '/')
-        con = self.split_path(con)
-        con = self.assemble_path(con)
-        con = self.promote_path(con)
-        print('Path formatted...')
-        dumps_path = self.assemble_dir(con)
-        print('Directory assembled...')
-        con = self.get_data(dumps_path)
-        self.dump_data(con, error)
-        print('Data acquired, dumped...')
-        print('------------------')
-        print('Crash documented to:', f'{con}')
-        print('------------------')
-        input('Enter anything to exit: ')
-        sys.exit()
-
-    def convert_path(self, path, mode):
-        n_string = ''
-        for letter in path:
-            if mode == '/':
-                if letter == '\\':
-                    n_string += '/'
-                else:
-                    n_string += letter
-            elif mode == '\\':
-                if letter == '/':
-                    n_string += '\\'
-                else:
-                    n_string += letter
-        return n_string
-    
-    def split_path(self, path):
-        n_string = ''
-        n_list = []
-        for letter in path:
-            if letter == '/':
-                n_list.append(n_string)
-                n_string = ''
-            else:
-                n_string += letter
-        while n_list[0] == " ":
-            n_list.pop(0)
-        return n_list
-    
-    def assemble_path(self, path_list):
-        n_string = ''
-        for word in path_list:
-            n_string += word
-            n_string += '/'
-        return n_string
-    
-    def remove_n_path_index(self, path):
-        path_list = self.split_path(path)
-        path_list.pop(len(path_list) - 1)
-        path = self.assemble_path(path_list)
-        return path_list, path
-    
-    def promote_path(self, path):
-        while True:
-            path_list, path = self.remove_n_path_index(path)
-            if path_list[len(path_list) - 1] == 'everything':
-                break
-        return path
-
-    def assemble_dir(self, path):
-        path += 'crash/dumps'
-        return path
-    
-    def format_time(self):
-        import time
-        s = (time.ctime(time.time()))
-        s = s.replace(':', '-')
-        s = s.split()
-        for __ in range(2):
-            s.pop(0)
-        n_string = ''
-        for num in s:
-            n_string += num
-            if s.index(num) != len(s) -1:
-                n_string += '_'
-        return n_string
-
-    def get_data(self, dumps_dir):
-        import os
-        import json
-        time_val = self.format_time()
-        nc_log = os.path.join(dumps_dir, f'crash_log_{time_val}.log')
-        nc_log = self.convert_path(nc_log, '\\')
-        return nc_log
-
-    def dump_data(self, path, error):
-        #import json
-        f = open(path, 'w')
-        #json.dump(error, f)
-        f.write(error)
-        f.close()
-########################################################################
 in_folder = False
 try:
     class Install:
@@ -304,7 +202,9 @@ try:
                         self.top_wDir = os.path.dirname(self.top_wDir)
 
                         self.top_wDir = os.path.join(self.top_wDir, 'top')
-                        os.system(f'python {self.top_wDir}/starter.py')
+                        c2 = r'python {path}/starter.py'.format(path=self.top_wDir)
+                        # os.system(f'python {self.top_wDir}/starter.py')
+                        os.system(c2)
                         sys.exit() 
 
 
@@ -335,10 +235,10 @@ try:
                 path_loop = True
                 while path_loop:
                     print(f"""---------------
-                Input file directory for install below (or type "delete" to delete).'
-    Note: Must be absolute path from the root. For example, the absolute path of this file is:
+                Input folder directory for install below (or type "delete" to delete).'
+    Note: Must be absolute path from the root. For example, the absolute path of this folder is:
     - {os.getcwd()}
-    IMPORTANT: PLEASE DO NOT USE A FILE PATH WITH ANY SPACES IN IT.""")
+    IMPORTANT: PLEASE DO NOT USE A FOLDER PATH WITH ANY SPACES IN IT.""")
                     self.install_path = input('--> ')
 
                     # checking for uninstall, doing uninstall if so
@@ -348,11 +248,15 @@ try:
 
                             # for run
                             if self.rules['env'] == 'run':
-                                os.system(f'python {self.main_wDir}/delete.py')
+                                c1 = r'python {path}/delete.py'.format(path=self.main_wDir)
+                                # os.system(f'python {self.main_wDir}/delete.py')
+                                os.system(c1)
 
                             # - for codespace
                             else:
-                                os.system(f'python main/setup/delete.py')
+                                c1 = r'python main/setup/delete.py'
+                                # os.system(f'python main/setup/delete.py')
+                                os.system(c1)
 
                             # final, then finishes
                             print('---------------')
@@ -940,7 +844,7 @@ try:
 except Exception as e:
     import os
     import traceback
-    Crash_Handler(
-        wDir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    import setup_crash_handler
+    setup_crash_handler.Crash_handler(
         error = traceback.format_exc()
     )

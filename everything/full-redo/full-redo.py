@@ -69,15 +69,15 @@ extract_path = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}/everything"
 back_extract = f"{tmp_path}/SketchedDoughnut-SDA-src-{commit_label}"
 other_paths = [ 
     # all MD
-    [f"{back_extract}/changelog.md", 'changelog.md'],
-    [f"{back_extract}/README.md", 'README.md'],
-    # all extensionless,
-    [f"{back_extract}/.gitattributes", '.gitattributes'],
-    [f"{back_extract}/LICENSE", 'LICENSE'],
-    [f"{back_extract}/Pipfile", 'Pipfile'],
-    # all other types (.lock, other .txt),
-    [f"{back_extract}/requirements.txt", 'requirements.txt'],
-    [f"{back_extract}/Pipfile.lock", 'Pipfile.lock']
+    f"{back_extract}/changelog.md",
+    f"{back_extract}/README.md",
+    # all extensionless (txt)
+    f"{back_extract}/.gitattributes.txt",
+    f"{back_extract}/LICENSE.txt",
+    f"{back_extract}/Pipfile.txt",
+    # all other types (.lock, other .txt)
+    f"{back_extract}/requirements.txt", 
+    f"{back_extract}/Pipfile.lock"
 ]
 
 # everything path

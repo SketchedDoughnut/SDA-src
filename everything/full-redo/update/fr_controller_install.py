@@ -87,10 +87,9 @@ def update_handler_install(
         c.copy(extract_path, everything_path)
 
         # NEW SYSTEM FOR COPYING OVER EXTRA FILES (this is only in full-redo)
-        print(f'Update: Copying IMPORTANT files to {back_everything}...')
+        print('Update: Copying other files...')
         for file in other_path:
-            print(f'- copying {file[1]}')
-            c.copy(file[0], f'{back_everything}/{file[1]}', mode='file')
+            c.copy(file, back_everything)
  
         print('Update: Redirecting shortcut...')
         import winshell

@@ -11,4 +11,6 @@ print(path)
 
 print('Starter redirecting to index file...')
 print('----------------------------')
-os.system(f'python {path}')
+c1 = r'python {patth}'.format(patth=path) # calling string
+# os.system(f'python {path}')
+os.system(c1)

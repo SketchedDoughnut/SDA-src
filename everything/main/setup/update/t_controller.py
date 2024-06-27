@@ -45,7 +45,7 @@ def update_handler(main_wDir, setup_wDir):
     if mode == 'top':
         print('---------------')
         print('Update: installing top')
-        print('If you want to backup your top, copy the directory now.')
+        # print('If you want to backup your top, copy the directory now.')
         print(f'The directory is: {main_wDir}/top')
         if input('Continue? (y/n) ').lower() != 'y':
             print('---------------')

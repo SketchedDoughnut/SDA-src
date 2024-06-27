@@ -97,6 +97,7 @@ class Map_loader:
             self.reset_element_list()
             self.clear_screen()
             self.map_path = f'{self.wDir}/maps_in/{map_name}.json'
+            self.map_name = map_name
             self.phase_setter(
                 text=f'The path is: {self.map_path}',
                 button_text='not used'

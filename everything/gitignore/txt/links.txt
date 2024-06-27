@@ -22,6 +22,12 @@ https://answers.microsoft.com/en-us/windows/forum/all/windows-defender-thinks-my
 
 https://stackoverflow.com/questions/6904487/how-to-pass-arguments-to-a-thread
 
+https://www.w3schools.com/python/ref_string_format.asp
+
+https://www.reddit.com/r/learnpython/comments/28c0hy/using_ossystem_with_spaces_in_the_path/
+
+https://stackoverflow.com/questions/7152340/using-a-python-subprocess-call-to-invoke-a-python-script
+
 PYGAME:
     - https://github.com/techwithtim/PygameForBeginners
     - https://github.com/search?q=pygame&type=repositories

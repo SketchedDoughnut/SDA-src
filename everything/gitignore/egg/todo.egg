@@ -15,7 +15,10 @@
 
   - Update installer
     - add functionality for default path in program files (sys protected, use documents instead?)
-    
+
+  - update conway game
+    - finish exporting / loading maps
+      - display on start page how to export and load
   - Update rhythm game
     - Update score handling
       - have a health handler that will make you lose if you miss too many notes
@@ -26,3 +29,30 @@
     - divider lines upwards lining up with letters (between letter and zone) - NOTE: HAS TO FADE
     - choose better colors for end-screen
     - fix GIT LFS -> unkown WAVE format error, something with how it treats the file endings (made discussion post)
+
+
+
+
+
+
+  - transfer files over from FOMX                                                                                                         (DONE)
+  - fix issues on Github
+    - Cancelling import crashes Conways                                                                                                   (DONE)
+    - Game data not saved                                                                                                                 (DONE)
+    - Controls aren't shown
+    - No scaling, can't easily exit features
+    - Feature for rhythm game
+    - File paths with spaces don't work
+    - Feature for updates
+    - Window getting lost
+  - add additional features
+    - show legal document thing (this only runs once, on first run (which will also trigger after updates))
+    - add other initializing things (or the expandability later) for first launches
+    - add more clarification about FOLDER paths and not FILE paths                                                                        (DONE)
+    - redesign crash handler                                                                                                              (DONE)
+      - make into standalone file imported by others: have files reach for crash handlers below them in the file tree                     (DONE)
+    - design elevator                                                                                                                     (DONE)
+    - create propogation tool for elevator and crash handler                                                                              (DONE)
+  - do test releases on the development page
+  - transfer files to SDA-SRC, and SDA with the affected files
+  - release update!

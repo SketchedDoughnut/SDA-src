@@ -1,7 +1,7 @@
 I AM PROUD TO SAY THERE IS A MINIMAL TO NONE AMOUNT OF CHATGPT CODE IN ANY OF MY PROGRAMS!
 Everything here was developed by me (the creator, Sketched Doughnut), EXCEPT:
 
-- GitHubFolderDownloader (unused) located in archive/old-update/fiesta.py and fiesta.exe
+- GitHubFolderDownloader (unused) located in archive/old_update/fiesta.py and fiesta.exe
     - https://github.com/fbunaren/GitHubFolderDownloader
     - NOTE: Link can also be located in ./sources.txt
 
