@@ -124,6 +124,11 @@ try:
   setup_bool = False
   select = False
 
+  path = elevator.Elevator.elevated_universe
+  f = open(f'{path}/index/content_url.txt', 'w')
+  f.write("gay")
+  f.close()
+
   while True:
     if setup_bool == False:
       select = False
