@@ -38,7 +38,7 @@
   - transfer files over from FOMX                                                                                                         (DONE)
   - fix issues on Github
     - Cancelling import crashes Conways                                                                                                   (DONE)
-    - Game data not saved                                                                                                                 (DONE)
+    - Game data not saved                                                                                                                 
     - Controls aren't shown
     - No scaling, can't easily exit features
     - Feature for rhythm game

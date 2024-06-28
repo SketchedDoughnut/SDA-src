@@ -10,7 +10,9 @@ file_list = []
 blacklist = [
     'everything\\main\\top\\container\\game_data\\src\\rhythm\\setup'
 ]
-
+direct_filter = [
+    '__pycache__'
+]
 def iter(path):
     files = []
     for filename in os.listdir(path):
@@ -25,6 +27,13 @@ def iter(path):
 
 file_list = iter('everything')
 print('Indexed.')
+
+for string in file_list:
+    # print(string)
+    for filtered in direct_filter:
+        if filtered in string:
+            print('removing', string, 'via', filtered)
+            file_list.remove(string)
 
 f = open(r'everything\main\setup\file_list.json', 'w')
 json.dump(file_list, f)

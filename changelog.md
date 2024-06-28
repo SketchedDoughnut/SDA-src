@@ -40,3 +40,9 @@ Updates attempted, breakdowns occured, rollbacks commited.
 
 Re-enabling the cmd_reader on FOMx, as it seems to now be working.
 - commit label: [30561ac](https://github.com/SketchedDoughnut/SDA-src/commit/30561acf7ebce1d78b38b85ad2830859810846f5)
+
+# 6/28/24 (1:16am)
+**v1.0.7, v1.0.7-bugfix.0**
+
+This update fixes an issue where the folder "universe/" was not being created by full-redo, as well as fiesta-modern. Some other systems were fixed, as well. 
+- commit label: [tbd]()

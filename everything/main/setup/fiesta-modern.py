@@ -618,6 +618,11 @@ try:
                         [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock", 'Pipfile.lock']
                     ]
 
+                    folder_create = [
+                        'universe',
+                        'universe/index'
+                    ]
+
                     print(f'Update: Copying files to {copy_location}...')
                     copy_source = f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/everything/"
                     c.copy(copy_source, copy_location)
@@ -628,6 +633,15 @@ try:
                         print('- copying:', file[1])
                         c.copy(file[0], f'{back_extract}/{file[1]}', mode='file')
                     
+                    # new new system for creating universe/ if it doesn't exist
+                    print('Update: Creating universe if non-existent...')
+                    for folder in folder_create:
+                        try:
+                            os.mkdir(f'{back_extract}/{folder}')
+                            print('- created:', folder)
+                        except Exception as ee:
+                            print('- error creating universe folder:', ee)
+
                     print('Update: Cleaning up tmp...')
                     try:
                         shutil.rmtree(f'{self.install_path}/tmp')

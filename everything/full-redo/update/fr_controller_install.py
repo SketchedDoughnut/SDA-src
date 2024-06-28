@@ -43,6 +43,7 @@ def update_handler_install(
     everything_path,
     extract_path,
     other_path,
+    folder_paths,
     back_everything,
     repo_url,
     commit_label,
@@ -86,11 +87,21 @@ def update_handler_install(
         print('Update: Copying files...')
         c.copy(extract_path, everything_path)
 
-        # NEW SYSTEM FOR COPYING OVER EXTRA FILES (this is only in full-redo)
+        # NEW SYSTEM FOR COPYING OVER EXTRA FILES
         print('Update: Copying other files...')
         for file in other_path:
-            c.copy(file, back_everything)
- 
+            c.copy(file[0], f'{back_everything}/{file[1]}', mode='file')
+            print('- copying:', file[1])
+
+        # new new system for creating universe/ folders if non existent
+        print('Update: Creating universe if nonexistent...')
+        for folder in folder_paths:
+            try:
+                os.mkdir(f'{back_everything}/{folder}')
+                print('- created:', folder)
+            except Exception as e:
+                print('- error creating universe folder:', e)
+
         print('Update: Redirecting shortcut...')
         import winshell
         desktop = winshell.desktop()     

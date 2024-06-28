@@ -10,3 +10,7 @@ The following files have a crash handler:
         - everything\main\top\container\index.py
 
 The following files have a elevator:
+
+The following files needed to be updated in sync with any saved game data:
+    - folder creator in "fr_controller_install.py" tool of full-redo.py ("# new new system for creating universe/ folders if non existent")
+    - folder creator in fiesta-modern / exe ("# new new system for creating universe/ if it doesn't exist")
