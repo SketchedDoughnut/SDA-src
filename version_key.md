@@ -1,7 +1,7 @@
 # Key 
 **a key for seeing what version release names mean.**
 
-- bf / bugfix - bugfix <br>
+- bf / bugfix - bugfix.X <br>
 - vX.X.X - a normal release <br>
-- feature - a feature release <br>
-- patch - a patch that fixes small things not reachable by FOMX
+- feature.X - a feature release <br>
+- patch.X - a patch that fixes small things not reachable by FOMX
