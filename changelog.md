@@ -54,3 +54,9 @@ This update fixes an issue where the folder "universe/" was not being created by
 
 This update includes some new features in fiesta-modern, such as an easier user interface for installing Python, as well as a new propagator tool for FOMX. This allows it to spread updates from the template files for the elevator and the crash handler to all the other files that are duplicates. This makes updates way more easier for me!
 - commit label: [19fd827](https://github.com/SketchedDoughnut/SDA-src/commit/19fd8270e6c9e6688176e94a1bd282932b5f8170)
+
+# 6/29/24 (4:29pm)
+**v1.0.8**
+
+This update includes a lot! The installer, as well as all of the game systems can now have spaces in their file paths. As well as that, the installer requests admin access upon launch, and so does fiesta.exe. This allows them to function properly inside of program files, which makes installation somewhat easier for users!
+- commit label: [tbd]()
