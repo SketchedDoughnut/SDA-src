@@ -32,7 +32,6 @@ for string in file_list:
     # print(string)
     for filtered in direct_filter:
         if filtered in string:
-            print('removing', string, 'via', filtered)
             file_list.remove(string)
 
 f = open(r'everything\main\setup\file_list.json', 'w')

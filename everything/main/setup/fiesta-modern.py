@@ -427,18 +427,32 @@ try:
             
             # make sure they have python installed
             print('---------------')
-            print("""
-                        Before we proceed, you need to have an installation of python installed.
-                If you already have one, type "y" to proceed. If you don't, do the following instructions:
-                - go to Microsoft Store
-                - search "Python 3.11"
-                - Install
-                - You're done!
-                            Once done doing these instructions, type 'y' (anything else to cancel).
-                        NOTE: FUNCTIONALITY CAN NOT BE GUARANTEED WITH ANY OTHER PYTHON VERSIONS.
-                """)
-            if input('--> ').lower() != 'y':
-                sys.exit()
+            print("""Before we proceed, you need to have an installation of python installed. 
+      This project has been built for python 3.11, and functionality can not be guaranteed with other versions.
+                      If you already have one, enter 'y' to proceed. If you don't, enter 'n'""")
+            choiceee = input('-> ')
+            if choiceee.lower() == 'n':
+                import update.install.python_helper as py_helper
+                loader = py_helper.Python_helper(self.setup_wDir)
+                loader.main()
+                if loader.run_install == True:
+                    loader.run_python_installer()
+                else:
+                    print('User has chosen not to run install, skipping...')
+            # print("""
+            #             Before we proceed, you need to have an installation of python installed.
+            #     If you already have one, type "y" to proceed. If you don't, do the following instructions:
+            #     - go to Microsoft Store
+            #     - search "Python 3.11"
+            #     - Install
+            #     - You're done!
+            #                 Once done doing these instructions, type 'y' (anything else to cancel).
+            #             NOTE: FUNCTIONALITY CAN NOT BE GUARANTEED WITH ANY OTHER PYTHON VERSIONS.
+            #     """)
+            # if input('--> ').lower() != 'y':
+            #     sys.exit()
+            if False:
+                pass
 
             else:
                 state = ''

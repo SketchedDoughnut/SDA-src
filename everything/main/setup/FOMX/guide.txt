@@ -47,9 +47,10 @@ Explanation:
 Here are the commands read by cmd_reader:
 
 end: ends the reading of commands
-mkdir: makes a directory
-rmdir: removes a directory
-mkfile: makes an empty file
-rmfile: removes a file
- 
-NOTE: THIS IS RAN BEFORE ANY DOWNLOADS
+mkdir: makes a directory -> takes one argument, path from everything to directory to make -> examples: mkdir everything/main/top/container/test
+rmdir: removes a directory -> takes one argument, path from everything to directory to remove -> examples: rmdir everything/main/top/container/test
+mkfile: makes an empty file -> takes one argument, path from everything to file to make -> examples: mkfile everything/main/top/container/test/test.txt
+rmfile: removes a file -> takes one argument, path from everything to file to remove -> examples: rmfile everything/main/top/container/test/test.txt
+propagate: propagate systems -> takes one argument, either crash or elevator - > examples: propagate crash (or) propagate elevator
+
+NOTE: THIS IS RAN BEFORE ANY DOWNLOADS (propogating is done after downloading files)
