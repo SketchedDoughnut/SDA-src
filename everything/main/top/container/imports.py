@@ -3,11 +3,13 @@ print('Installing pip files...')
 print('----------------------------')
 import pip
 import os
+import subprocess
 
 # also consider cryptography, pywin32 
 # pip.main(['install', 'pygame', 'requests', 'pywin32', 'winshell'])
 # using new system that does not cause errors, as supposedly pip will be depreciated later
-os.system('python -m pip install pygame requests pywin32 winshell')
+# os.system('python -m pip install pygame requests pywin32 winshell')
+subprocess.run('python -m pip install pygame requests pywin32 winshell')
 
 # test every other import. Why? God knows why, man.
 # builtins

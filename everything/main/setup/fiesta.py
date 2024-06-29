@@ -1,5 +1,6 @@
 # importing builtin
 import os
+import subprocess
 import time
 import shutil
 import timeit
@@ -213,9 +214,10 @@ try:
                             self.top_wDir = os.path.dirname(self.top_wDir)
 
                             self.top_wDir = os.path.join(self.top_wDir, 'top')
-                            c1 = r'python {path}/starter.py'.format(path=self.top_wDir) # calling string
+                            c1 = r'{path}/starter.py'.format(path=self.top_wDir) # calling string
                             # os.system(f'python {self.top_wDir}/starter.py')
-                            os.system(c1)
+                            # os.system(c1)
+                            subprocess.run(f'python "{c2}"')
                             sys.exit() 
 
 
@@ -230,15 +232,18 @@ try:
 
                         print('---------------')
                         print('Installer running FOMX...')
-                        c2 = r'python {path}/setup/FOMX/fomx.py'.format(path=self.top_wDir) # caling string
+                        c2 = '{path}/setup/FOMX/fomx.py'.format(path=self.top_wDir) # caling string
+                        # print('going to path:', c2)
                         # os.system(f'python {self.top_wDir}/setup/FOMX/fomx.py')
-                        os.system(c2)
+                        # os.system(c2)
+                        subprocess.run(f'python "{c2}"')
                         print('---------------')
                         self.top_wDir = os.path.join(self.top_wDir, 'top')
                         print('Installer redirecting to starter file...')
-                        c2 = r'python {path}/starter.py'.format(path=self.top_wDir) # calling string
+                        c2 = r'{path}/starter.py'.format(path=self.top_wDir) # calling string
                         # os.system(f'python {self.top_wDir}/starter.py')
-                        os.system(c2)
+                        # os.system(c2)
+                        subprocess.run(f'python "{c2}"')
                         sys.exit() 
 
 
@@ -280,15 +285,17 @@ try:
 
                             # for run
                             if self.rules['env'] == 'run':
-                                c3 = r'python {path}/delete.py'.format(path=self.main_wDir)
+                                c3 = r'{path}/delete.py'.format(path=self.main_wDir)
                                 # os.system(f'python {self.main_wDir}/delete.py')
-                                os.system(c3)
+                                # os.system(c3)
+                                subprocess.run(f'python "{c3}"')
 
                             # - for codespace
                             else:
-                                c3 = r'python main/setup/delete.py'
+                                c3 = r'main/setup/delete.py'
                                 # os.system(f'python main/setup/delete.py')
-                                os.system(c3)
+                                # os.system(c3)
+                                subprocess.run(f'python "{c3}"')
 
                             # final, then finishes
                             print('---------------')
@@ -387,7 +394,7 @@ try:
             path = new_string
 
             if os.path.exists(path):
-                path += '/game_name'
+                path += '/SDA_game_name' # used to be game_name
                 return [path, False]
         
             else:
@@ -622,7 +629,7 @@ try:
                             print('Creating shortcut...')
                             desktop = winshell.desktop()
                             
-                            path = os.path.join(desktop, "game_name.lnk") # CHANGE game_name TO NAME
+                            path = os.path.join(desktop, "SDA_game_name.lnk") # CHANGE game_name TO NAME
                             self.abs_shortcut = path
                             #target = f"{self.install_path}/main/top/starter.exe" # CHANGE TO EXE
                             target = f"{self.install_path}/everything/main/setup/fiesta.exe" # CHANGE TO EXE

@@ -1,5 +1,6 @@
 # importing builtin
 import os
+import subprocess
 import time
 import shutil
 import timeit
@@ -238,7 +239,9 @@ try:
                 Input folder directory for install below (or type "delete" to delete).'
     Note: Must be absolute path from the root. For example, the absolute path of this folder is:
     - {os.getcwd()}
-    IMPORTANT: PLEASE DO NOT USE A FOLDER PATH WITH ANY SPACES IN IT.""")
+    The default file path, if nothing is entered, is set to Program Files.
+    - {os.path.join(os.environ['SystemDrive'], '/Program Files')}""")
+    # IMPORTANT: PLEASE DO NOT USE A FOLDER PATH WITH ANY SPACES IN IT.
                     self.install_path = input('--> ')
 
                     # checking for uninstall, doing uninstall if so
@@ -248,15 +251,17 @@ try:
 
                             # for run
                             if self.rules['env'] == 'run':
-                                c1 = r'python {path}/delete.py'.format(path=self.main_wDir)
+                                c1 = r'{path}/delete.py'.format(path=self.main_wDir)
                                 # os.system(f'python {self.main_wDir}/delete.py')
-                                os.system(c1)
+                                # os.system(c1)
+                                subprocess.run(f'python "{c1}"')
 
                             # - for codespace
                             else:
-                                c1 = r'python main/setup/delete.py'
+                                c1 = r'main/setup/delete.py'
                                 # os.system(f'python main/setup/delete.py')
-                                os.system(c1)
+                                # os.system(c1)
+                                subprocess.run(f'python "{c1}"')
 
                             # final, then finishes
                             print('---------------')
@@ -309,7 +314,7 @@ try:
                 print('Path is defaulting to Program Files.')
                 try:
                     path = os.path.abspath("Program Files")
-                    path = os.path.join(os.environ['SystemDrive'], 'Program Files')
+                    path = os.path.join(os.environ['SystemDrive'], '/Program Files')
                     ns = ''
                     next = False
                     for letter in path:
@@ -355,7 +360,7 @@ try:
             path = new_string
 
             if os.path.exists(path):
-                path += '/game_name'
+                path += '/SDA_game_name' # used to be game_name
                 return [path, False]
         
             else:
@@ -631,7 +636,6 @@ try:
                         [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/requirements.txt", 'requirements.txt'],
                         [f"{ext_download_path}/SketchedDoughnut-SDA-src-{self.release_version}/Pipfile.lock", 'Pipfile.lock']
                     ]
-
                     folder_create = [
                         'universe',
                         'universe/index'
@@ -718,7 +722,7 @@ try:
                             print('Update: Creating shortcut...')
                             desktop = winshell.desktop()
                             
-                            path = os.path.join(desktop, "game_name.lnk") # CHANGE game_name TO NAME
+                            path = os.path.join(desktop, "SDA_game_name.lnk") # CHANGE game_name TO NAME
                             self.abs_shortcut = path
                             #target = f"{self.install_path}/main/top/starter.exe" # CHANGE TO EXE
                             target = f"{self.install_path}/everything/main/setup/fiesta.exe" # CHANGE TO EXE

@@ -2,25 +2,32 @@
 #########################################################################################################
 # loading 
 import os
+import subprocess
 # import json
-import time
+# import time
 import requests
 import tkinter
 
 TEXT_DATA = [
     """Welcome to the Python helper! This guide will help you through the process of installing Python. Click "Continue" to get started.""",
+
     """This project requires an installation of Python. It was specifically made on Python 3.11.""",
+
     """To check if you have Python installed, open command prompt and enter -
     -> "python --version". 
 - You should get a version number back. This project can not guarantee proper functionality on versions other then Python 3.11.""",
+
     """If you have Python installed, click "Yes, I have Python" below. Otherwise, click "No, I do not have Python" below.""",
+
     """You now have two options. You can install Python from the Microsoft store, or install it via this installer.
 If you use this installer, it will be quicker but slightly more complex. If you use the Microsoft Store, it will take longer but will be more simple.
 It is advised that you use this installer (I spent a long time making the system :c ).
 Select the respective buttons below to decide.""",
+
 """The installer will now install the Python installation agent, and then run it. When the installer runs, on the first page, please select the option to
 "Install Now". As well as that, select the option to "Add Python.exe to PATH". These are both necessary settings for this project to work. On the last page, when Python
-is done installing, select the checkbox that allows Python to make its PATh variable longer. Then, you're done!""",
+is done installing, select the checkbox that allows Python to make its PATH variable longer. Then, you're done!""",
+
 """
 Do the followng instructions to install Python from the Microsoft Store:
 - go to Microsoft Store
@@ -218,7 +225,8 @@ class Python_helper:
             f.write(installer_data.content)
             f.close()
             print('Running file...')
-            os.system(exec_path)
+            # os.system(exec_path)
+            subprocess.run(f"{exec_path}")
             print('Success!')
 
 # Python_helper().main()

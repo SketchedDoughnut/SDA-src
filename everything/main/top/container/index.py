@@ -4,6 +4,7 @@
 try:
   # import for initial
   import os
+  import subprocess
 
   # file imports
   import index_elevator as elevator
@@ -24,9 +25,10 @@ try:
     #print('----------------------------')
     print(f'Running {setup_path_list[0][1]}...')
     print('----------------------------')
-    c1 = r'python {path}'.format(path=setup_path_list[0][0]) # calling string
+    c1 = r'{path}'.format(path=setup_path_list[0][0]) # calling string
     # os.system(f'python {setup_path_list[0][0]}')
-    os.system(c1)
+    # os.system(c1)
+    subprocess.run(f'python "{c1}"')
 
   imports()
 
@@ -52,9 +54,10 @@ try:
   def update():
     print('----------------------------')
     print(f'Running {setup_path_list[1][1]}...')
-    c2 = r'python {path}'.format(path=setup_path_list[1][0]) # calling string
+    c2 = r'{path}'.format(path=setup_path_list[1][0]) # calling string
     # os.system(f'python {setup_path_list[1][0]}')
-    os.system(c2)
+    # os.system(c2)
+    subprocess.run(f'python "{c2}"')
 
   class Format:
     def __init__(self):
@@ -233,9 +236,10 @@ try:
       print('----------------------------')
       running = path_list[num][1]
       print(f'Running {running}...')
-      c3 = r'python {path}'.format(path=path_list[num][0])
+      c3 = r'{path}'.format(path=path_list[num][0])
       # os.system(f'python {path_list[num][0]}')
-      os.system(c3)
+      # os.system(c3)
+      subprocess.run(f'python "{c3}"')
       setup_bool = False
 
 

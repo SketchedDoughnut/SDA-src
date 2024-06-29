@@ -1,0 +1,3 @@
+--uac-admin 
+    # https://stackoverflow.com/questions/64076532/how-to-allow-a-python-script-to-make-changes-to-program-files
+    - This allows the file to be authorized by user, maybe?
