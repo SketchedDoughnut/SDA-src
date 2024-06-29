@@ -11,7 +11,7 @@ blacklist = [
     'everything\\main\\top\\container\\game_data\\src\\rhythm\\setup'
 ]
 direct_filter = [
-    '__pycache__'
+    "__pycache__"
 ]
 def iter(path):
     files = []
@@ -32,6 +32,7 @@ for string in file_list:
     # print(string)
     for filtered in direct_filter:
         if filtered in string:
+            print(f'removed {filtered} from {string}')
             file_list.remove(string)
 
 f = open(r'everything\main\setup\file_list.json', 'w')
