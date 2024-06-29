@@ -56,7 +56,10 @@ This update includes some new features in fiesta-modern, such as an easier user 
 - commit label: [19fd827](https://github.com/SketchedDoughnut/SDA-src/commit/19fd8270e6c9e6688176e94a1bd282932b5f8170)
 
 # 6/29/24 (4:29pm)
-**v1.0.8**
+**v1.0.8, v1.0.8-ohno**
 
 This update includes a lot! The installer, as well as all of the game systems can now have spaces in their file paths. As well as that, the installer requests admin access upon launch, and so does fiesta.exe. This allows them to function properly inside of program files, which makes installation somewhat easier for users!
-- commit label: [tbd]()
+- commit label: [7be5cc1](https://github.com/SketchedDoughnut/SDA-src/commit/7be5cc1fdac25d05118ef3933f0bbd911b035fe1)
+
+The "ohno" addition update fixes file_list.json, and recompiles full-redo.exe. It is titled "ohno" because, well, oh no.
+- commit label: [447c39e](https://github.com/SketchedDoughnut/SDA-src/commit/447c39eea07007d2d7665470f34c4102139f1149)
