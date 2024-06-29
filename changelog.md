@@ -48,3 +48,9 @@ For v1.0.7, read information [here!](https://github.com/SketchedDoughnut/SDA-src
 For v1.0.7=bugfix.0, read below. <br>
 This update fixes an issue where the folder "universe/" was not being created by full-redo, as well as fiesta-modern. Some other systems were fixed, as well. 
 - commit label: [tbd]()
+
+# 6/29/24 (1:48am)
+**v1.0.7-feature.0**
+
+This update includes some new features in fiesta-modern, such as an easier user interface for installing Python, as well as a new propagator tool for FOMX. This allows it to spread updates from the template files for the elevator and the crash handler to all the other files that are duplicates. This makes updates way more easier for me!
+- commit label: [tbd]()
