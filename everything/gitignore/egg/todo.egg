@@ -38,11 +38,11 @@
   - transfer files over from FOMX                                                                                                         (DONE)
   - fix issues on Github
     - Cancelling import crashes Conways                                                                                                   (DONE)
-    - Game data not saved                                                                                                                 
+    - Game data not saved                                                                                                                 (DONE)
     - Controls aren't shown
     - No scaling, can't easily exit features
     - Feature for rhythm game
-    - File paths with spaces don't work
+    - File paths with spaces don't work                                                                                                   (DONE)
     - Feature for updates
     - Window getting lost
   - add additional features
@@ -54,4 +54,3 @@
     - design elevator                                                                                                                     (DONE)
     - create propogation tool for elevator and crash handler                                                                              (DONE)
   - transfer files to SDA-SRC, and SDA with the affected files                                                                            (DONE)
-  - release update!                                                                                                                       (DONE)
